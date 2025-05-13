@@ -385,16 +385,12 @@ products:
             fixture_format: '{paragraph}'
         content:
             type: redactor
-        slug:
-            type: slug
-            uses: [ title ]
-            group: Meta
         sort:
             type: number
             mode: integer
             default: 10
     show_on_dashboard: true
-    viewless: false
+    viewless: true
     default_status: published
     searchable: false
     order: order
