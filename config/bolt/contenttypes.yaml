@@ -173,10 +173,10 @@ homepage:
                                 Modify in Auxiliars > Section Grid
                     default:
                         visible: 1
-        slug:
-            type: slug
-            uses: title
-            group: Meta
+        # slug:
+        #     type: slug
+        #     uses: title
+        #     group: Meta
     viewless: true
     singleton: true
     icon_many: "fa:home"
