@@ -28,14 +28,19 @@ homepage:
             placeholder: "contentType/slug or https://example.org/"
             postfix: "Use this to add a link for this Homepage. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
             fixture_format: "{url}"
-        slider:
+        slider_visibility:
+            type: checkbox
+            mode: switch
+            variant: inline
+            group: Principal Slider
+            default: 1
+        slider_collection:
             type: collection
             label: Slider
-            group: Principal Slider 
             fields:
                 single_slide:
                     type: set
-                    label: Slide
+                    label: Single Slide
                     fields:
                         visible:
                             type: checkbox
@@ -62,7 +67,8 @@ homepage:
                         visible: 1
                         title_slide: Text_1
                         subtitle_slide: Text_2
-        below_slider:
+
+        slider_below:
             type: set
             label: Below Slider
             fields:
@@ -90,6 +96,7 @@ homepage:
                             type: checkbox
                             label: Visible
                             mode: switch
+                            variant: inline
                         helpful_tip:
                             type: text
                             class: d-none
@@ -106,6 +113,7 @@ homepage:
                             type: checkbox
                             label: Visible
                             mode: switch
+                            variant: inline
                         helpful_tip:
                             type: text
                             class: d-none
@@ -122,6 +130,7 @@ homepage:
                             type: checkbox
                             label: Visible
                             mode: switch
+                            variant: inline
                         helpful_tip:
                             type: text
                             class: d-none
@@ -138,6 +147,7 @@ homepage:
                             type: checkbox
                             label: Visible
                             mode: switch
+                            variant: inline
                         helpful_tip:
                             type: text
                             class: d-none
@@ -154,6 +164,7 @@ homepage:
                             type: checkbox
                             label: Visible
                             mode: switch
+                            variant: inline
                         helpful_tip:
                             type: text
                             class: d-none
@@ -169,7 +180,6 @@ homepage:
     viewless: true
     singleton: true
     icon_many: "fa:home"
-
 
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
@@ -209,7 +219,6 @@ homepage:
 #     taxonomy: [ groups ]
 #     records_per_page: 5
 #     order: id
-
 
 # Entries can be used for things like 'news' or 'blogpostings'. They have a
 # 'teaser', which can be used for a short blurb on listing-pages, allowing
@@ -265,7 +274,6 @@ homepage:
 #     icon_many: "fa:file-alt"
 #     icon_one: "fa:file-alt"
 
-
 # The 'People' ContentType can be used to build pages about the people in your
 # company, organisation or any other kind of team.
 
@@ -303,7 +311,6 @@ homepage:
 #             uses: [ name ]
 #     icon_one: fa:user
 #     icon_many: fa:users
-
 
 # The 'Blocks' ContentType is a so-called 'resource ContentType'. This means
 # that it can be used to manage smaller pieces of content, like the 'about us'
@@ -345,7 +352,6 @@ homepage:
 #     icon_many: "fa:cubes"
 #     icon_one: "fa:cube"
 
-
 # The 'Products' ContentType can be used to manage information about the
 # products or services you (or your company, organisation) provide.
 
@@ -359,21 +365,21 @@ products:
             variant: inline
             label: Name of this product
             group: Block
-            fixture_format: '{catchPhrase}'
+            fixture_format: "{catchPhrase}"
         feature_1:
             type: text
             variant: inline
-            fixture_format: '{bs}'
+            fixture_format: "{bs}"
             label: "Key feature 1"
         feature_2:
             type: text
             variant: inline
-            fixture_format: '{bs}'
+            fixture_format: "{bs}"
             label: "Key feature 2"
         feature_3:
             type: text
             variant: inline
-            fixture_format: '{bs}'
+            fixture_format: "{bs}"
             label: "Key feature 3"
         price:
             type: text
@@ -382,7 +388,7 @@ products:
             type: image
         teaser:
             type: redactor
-            fixture_format: '{paragraph}'
+            fixture_format: "{paragraph}"
         content:
             type: redactor
         sort:
@@ -396,7 +402,6 @@ products:
     order: order
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
-
 # Possible field types:
 #
 # text - varchar(256) - input type text.

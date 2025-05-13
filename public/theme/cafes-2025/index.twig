@@ -5,10 +5,17 @@
     {% include 'partials/_top_bar.twig' %}
     {% include 'partials/_header.twig' %}
 
-    {% include 'partials/_slider_section.twig' %}
-    {% include 'partials/_below_slider.twig' %}
 
-    {% include 'index_content.twig' %}
+    {% if record.slider_collection is not null and record.slider_visibility %}
+        {% include 'partials/_slider_section.twig' %}
+    {% endif %}
+
+    {% if record.slider_below is not null and record.slider_below.visible %}
+        {% include 'partials/_below_slider.twig' %}
+    {% endif %}
+
+
+    {% include 'index_content.twig' with {content: record.sections_home} %}
 
     {% include 'partials/_footer.twig' %}
 
