@@ -1,0 +1,30 @@
+<!-- Content
+============================================= -->
+<div id="content">
+    <div class="content-wrap py-0">
+        {% for section in sections %}
+
+            {% if section.name == 'section_service' %}
+                {% include 'partials/_section_service.twig' with {block: section} %}
+            {% endif %}
+
+            {% if section.name == 'section_features' %}
+                {% include 'partials/_section_features.twig' with {block: section} %}
+            {% endif %}
+
+            {% if section.name == 'section_products' %}
+                {% include 'partials/_section_products.twig' with {block: section} %}
+            {% endif %}
+
+            {% if section.name == 'section_ticker' %}
+                {% include 'partials/_section_ticker.twig' with {block: section} %}
+            {% endif %}
+
+            {% if section.name == 'section_grid' %}
+                {% include 'partials/_section_grid.twig' with {block: section} %}
+            {% endif %}
+
+        {% endfor %}
+    </div>
+</div>
+<!-- #content end -->
