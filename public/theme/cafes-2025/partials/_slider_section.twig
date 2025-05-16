@@ -1,4 +1,4 @@
-{% dump(sliders) %}
+{# dump(sliders) #}
 
 {% if visible %}
 
@@ -11,8 +11,8 @@
                     <rs-slides>
                         {% for slide in sliders %}
                             {% if slide.visible %}
-                                {% dump(slide.image_slide) %}
-                                <!-- Slider-1 -->
+                                {# dump(slide.image_slide) #}
+                                <!-- Slider-N -->
                                 <rs-slide style="position: absolute;" data-key="slider-{{loop.index}}" data-title="Slide" data-in="x:(100%);" data-out="x:(-60%);">
                                     <img src="{{asset('demos/skincare/images/slider/dummy.png')}}" title="{{slide.image_slide.filename}}" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{slide.image_slide|thumbnail(1920, 1080)}}" data-parallax="off" {% if slide.video_slide.path is empty %} data-panzoom="d:9000ms;ss:100%;se:120%;os:0px/0;oe:0px/0px;" {% endif %} data-no-retina>
                                     {% if slide.video_slide.path is not empty %}
@@ -58,103 +58,20 @@
                                 </rs-slide>
                             {% endif %}
                         {% endfor %}
-                        <!-- Slider-2 -->
-                    {# <rs-slide style="position: absolute;" data-key="slider-2" data-title="Slide" data-in="x:(100%);" data-out="x:(-60%);">
-                                                                    <img src="{{asset('demos/skincare/images/slider/dummy.png')}}" title="2.jpg" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{asset('demos/skincare/images/slider/2.jpg')}}" data-parallax="off" data-panzoom="d:9000ms;ss:100%;se:120%;os:0px/0;oe:0px/0px;" data-no-retina>
-                                                                    <rs-zone id="rrzm_96" class="rev_row_zone_middle" style="z-index: 17;">
-                                        
-                                                                        <rs-row id="slider-shop-slide-2-layer-17" data-type="row" data-xy="xo:50px;yo:50px;" data-basealign="slide" data-rsp_bd="off" data-margin="r:0,200,140,40;l:250,200,140,40;" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:7000;" style="z-index:1;">
-                                                                            <rs-column id="slider-shop-slide-2-layer-18" data-type="column" data-xy="xo:50px;yo:50px;" data-rsp_bd="off" data-column="w:100%;a:middle;" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:7000;" style="z-index:2;width:100%;">
-                                                                                <rs-layer id="slider-shop-slide-2-layer-20" data-type="text" data-rsp_ch="on" data-text="w:normal;s:30;l:30;" data-dim="minh:0px,none,none,none;" data-blendmode="soft-light" data-disp="inline-block" data-margin="l:10,10,10,6;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:3;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">
-                                                                                    {% verbatim %}
-                                                                                        {{current_slide_index}}
-                                                                                    {% endverbatim %}
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-19" data-type="text" data-color="rgba(255, 255, 255, 0.5)" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:20;" data-dim="minh:0px,none,none,none;" data-blendmode="soft-light" data-disp="inline-block" data-margin="l:5;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:4;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">/
-                                                                                    {% verbatim %}
-                                                                                        {{total_slide_count}}
-                                                                                    {% endverbatim %}
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-2" class="fst-italic text-capitalize" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:180,100,75,80;l:180,90,68,70;ls:-10px,-8px,-6px,-3px;fw:800;" data-dim="h:400px,200px,151px,160px;minh:0px,none,none,none;" data-margin="t:30,25,19,12;b:30,25,19,30;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;" style="z-index:5;font-family: var(--cnvs-primary-font);">Bamboo<br>Fibres
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-29" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="l:10,10,10,6;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:7;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">shampoo
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-30" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="r:5;l:5;" data-frame_999="o:0;st:w;" style="z-index:8;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">/
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-31" data-type="text" data-color="rgba(255, 255, 255, 0.5)" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="r:0,0,0,100;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:9;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">Ayurvedic
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-32" data-type="text" data-color="rgba(255, 255, 255, 0.5)" data-rsp_ch="on" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="l:80,50,80,6;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:10;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">industry
-                                                                                </rs-layer>
-                                        
-                                                                                <rs-layer id="slider-shop-slide-2-layer-33" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="l:5;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:11;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">Mani Moisture
-                                                                                </rs-layer>
-                                                                            </rs-column>
-                                                                        </rs-row>
-                                                                    </rs-zone>
-                                                                </rs-slide> #}
-
-                        <!-- Slider-3 -->
-                        {# <rs-slide style="position: absolute;" data-key="slider-3" data-title="Slide" data-in="x:(100%);" data-out="x:(-60%);">
-                                                                            <img src="{{asset('demos/skincare/images/slider/dummy.png')}}" title="3.jpg" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{asset('demos/skincare/images/slider/3.jpg')}}" data-parallax="off" data-panzoom="d:9000ms;ss:100%;se:120%;os:0px/0;oe:0px/0px;" data-no-retina>
-                                                                            <rs-zone id="rrzm_97" class="rev_row_zone_middle" style="z-index: 17;">
-                                                
-                                                                                <rs-row id="slider-shop-slide-3-layer-17" data-type="row" data-xy="xo:50px;yo:50px;" data-basealign="slide" data-rsp_bd="off" data-margin="r:0,200,140,40;l:250,200,140,40;" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:7000;" style="z-index:1;">
-                                                                                    <rs-column id="slider-shop-slide-3-layer-18" data-type="column" data-xy="xo:50px;yo:50px;" data-rsp_bd="off" data-column="w:100%;a:middle;" data-frame_0="o:1;" data-frame_999="o:0;st:w;sA:7000;" style="z-index:2;width:100%;">
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-20" data-type="text" data-rsp_ch="on" data-text="w:normal;s:30;l:30;" data-dim="minh:0px,none,none,none;" data-blendmode="soft-light" data-disp="inline-block" data-margin="l:10,10,10,6;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:3;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">
-                                                                                            {% verbatim %}
-                                                                                                {{current_slide_index}}
-                                                                                            {% endverbatim %}
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-19" data-type="text" data-color="rgba(255, 255, 255, 0.5)" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:20;" data-dim="minh:0px,none,none,none;" data-blendmode="soft-light" data-disp="inline-block" data-margin="l:5;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:4;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">/
-                                                                                            {% verbatim %}
-                                                                                                {{total_slide_count}}
-                                                                                            {% endverbatim %}
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-2" class="fst-italic text-capitalize" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:180,100,75,80;l:180,90,68,70;ls:-10px,-8px,-6px,-3px;fw:800;" data-dim="h:400px,200px,151px,160px;minh:0px,none,none,none;" data-margin="t:30,25,19,12;b:30,25,19,30;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;" style="z-index:5;font-family: var(--cnvs-primary-font);">Facial<br>Serum
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-29" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="l:10,10,10,6;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:7;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">Facial Cream
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-30" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="r:5;l:5;" data-frame_999="o:0;st:w;" style="z-index:8;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">/
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-31" data-type="text" data-color="rgba(255, 255, 255, 0.5)" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="r:0,0,0,100;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:9;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">Anti-Aging
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-32" data-type="text" data-color="rgba(255, 255, 255, 0.5)" data-rsp_ch="on" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="l:80,50,80,6;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:10;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">industry
-                                                                                        </rs-layer>
-                                                
-                                                                                        <rs-layer id="slider-shop-slide-3-layer-33" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:13;l:30;ls:1px;" data-dim="minh:0px,none,none,none;" data-disp="inline-block" data-margin="l:5;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;sp:1000;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6000;" style="z-index:11;font-family:var(--cnvs-body-font);text-transform:uppercase;display:inline-block;">Annmarie
-                                                                                        </rs-layer>
-                                                                                    </rs-column>
-                                                                                </rs-row>
-                                                                            </rs-zone>
-                                                                        </rs-slide> #}
-
                     </rs-slides>
 
                     <rs-static-layers>
-
                         <rs-group id="slider-shop-slide-33-layer-22" class="rs-layer-static" data-type="group" data-rsp_ch="on" data-xy="x:r;y:m;" data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:150px,120px,80px,49px;h:100%;" data-vbility="t,t,t,f" data-actions='o:click;a:jumptoslide;slide:next;||o:mouseenter;a:togglelayer;layer:slider-shop-slide-33-layer-5;ch:true;||o:mouseleave;a:togglelayer;layer:slider-shop-slide-33-layer-5;ch:true;' data-basealign="slide" data-onslides="s:1;" data-frame_0="x:175%;o:1;" data-frame_0_mask="u:t;x:-100%;" data-frame_1="e:power3.out;st:400;sp:400;sR:400;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6200;sA:7000;" style="z-index:19;">
                             <rs-layer id="slider-shop-slide-33-layer-21" class="rs-layer-static nav-wrapper" data-type="shape" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:100%;h:100%;" data-onslides="s:1;" data-border="bos:solid;boc:rgba(255, 255, 255, 0.1);bow:0,0,0,1px;" data-frame_999="o:0;st:w;sR:6700;" data-frame_hover="boc:rgba(255,255,255,0.2);bos:solid;bow:0,0,0,1px;" style="z-index:17;cursor:pointer;"></rs-layer>
 
-                            <rs-layer id="slider-shop-slide-33-layer-23" class="rs-noevents rs-layer-static text-uppercase font-body z-9 rs-layer-nav nav-next" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:700;s:15;ls:3px;" data-btrans="rZ:-90;" data-onslides="s:1;" data-frame_999="o:0;st:w;sR:6700;">next
+                            <rs-layer id="slider-shop-slide-33-layer-23" class="rs-noevents rs-layer-static text-uppercase font-body z-9 rs-layer-nav nav-next" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:700;s:15;ls:3px;" data-btrans="rZ:-90;" data-onslides="s:1;" data-frame_999="o:0;st:w;sR:6700;">SIGUIENTE
                             </rs-layer>
                         </rs-group>
 
                         <rs-group id="slider-shop-slide-33-layer-24" class="rs-layer-static" data-type="group" data-rsp_ch="on" data-xy="y:m;" data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:150px,120px,80px,49px;h:100%;" data-vbility="t,t,t,f" data-actions='o:click;a:jumptoslide;slide:previous;||o:mouseenter;a:togglelayer;layer:slider-shop-slide-33-layer-8;ch:true;||o:mouseleave;a:togglelayer;layer:slider-shop-slide-33-layer-8;ch:true;' data-basealign="slide" data-onslides="s:1;" data-frame_0="x:-175%;o:1;" data-frame_0_mask="u:t;x:100%;" data-frame_1="e:power3.out;st:400;sp:400;sR:400;" data-frame_1_mask="u:t;" data-frame_999="o:0;st:w;sR:6200;sA:7000;" style="z-index:22;">
                             <rs-layer id="slider-shop-slide-33-layer-25" class="rs-layer-static nav-wrapper" data-type="shape" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:normal;s:20,16,12,7;l:0,20,15,9;" data-dim="w:100%;h:100%;" data-onslides="s:1;" data-border="bos:solid;boc:rgba(255, 255, 255, 0.1);bow:0,1,0,0px;" data-frame_999="o:0;st:w;sR:6700;" data-frame_hover="boc:rgba(255,255,255,0.2);bos:solid;bow:0,1px,0,0px;" style="z-index:20;cursor:pointer;"></rs-layer>
 
-                            <rs-layer id="slider-shop-slide-33-layer-26" class="rs-noevents rs-layer-static text-uppercase font-body z-9 rs-layer-nav nav-prev" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:700;s:15;ls:3px;" data-btrans="rZ:-90;" data-onslides="s:1;" data-frame_999="o:0;st:w;sR:6700;">prev
+                            <rs-layer id="slider-shop-slide-33-layer-26" class="rs-noevents rs-layer-static text-uppercase font-body z-9 rs-layer-nav nav-prev" data-type="text" data-rsp_ch="on" data-xy="x:c;y:m;" data-text="w:700;s:15;ls:3px;" data-btrans="rZ:-90;" data-onslides="s:1;" data-frame_999="o:0;st:w;sR:6700;">PREVIO
                             </rs-layer>
                         </rs-group>
 
