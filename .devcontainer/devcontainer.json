@@ -39,7 +39,7 @@
     // "shutdownAction": "none",
 
     // Uncomment the next line to run commands after the container is created.
-    "postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions laravel)/' ~/.zshrc",
+    "postCreateCommand": "git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting && git clone https://github.com/zsh-users/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions && sed -i 's/plugins=(git)/plugins=(git zsh-syntax-highlighting zsh-autosuggestions)/' ~/.zshrc",
 
     // Configure tool-specific properties.
     "customizations": {
@@ -51,7 +51,8 @@
                 "redhat.vscode-yaml",
                 "RooVeterinaryInc.roo-cline",
                 "naumovs.color-highlight",
-                "esbenp.prettier-vscode"
+                "esbenp.prettier-vscode",
+                "yy0931.vscode-sqlite3-editor"
             ]
         }
     },
