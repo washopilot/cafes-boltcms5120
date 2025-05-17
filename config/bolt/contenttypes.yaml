@@ -243,6 +243,51 @@ section_service:
     icon_many: "fa:flag"
     icon_one: "fa:flag"
 
+section_features:
+    name: Section Features
+    singular_name: section_features
+    show_in_menu: Auxiliars
+    fields:
+        title:
+            type: text
+            class: inline
+            label: Title
+            default: Aquí va el título grande
+            group: Content
+        subtitle:
+            type: text
+            class: inline
+            label: Subtitle
+            default: Aquí va el título pequeño
+        features:
+            type: collection
+            label: Features to show
+            group: Features
+            fields:
+                feature:
+                    type: set
+                    label: Feature
+                    fields:
+                        title:
+                            type: text
+                            variant: inline
+                            label: Title
+                        subtitle:
+                            type: text
+                            variant: inline
+                            label: SubTtitle
+                        image:
+                            type: image
+                            extensions: [png]
+                            label: Image
+                    default:
+                        title: Aquí el título grande
+                        subtitle: Aquí el título pequeño
+    singleton: true
+    viewless: true
+    icon_many: "fa:lightbulb"
+    icon_one: "fa:lightbulb"
+
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
 # setting for an individual page.

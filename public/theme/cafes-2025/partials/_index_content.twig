@@ -9,7 +9,7 @@
             {% endif %}
 
             {% if section.name == 'section_features' %}
-                {% include 'partials/_section_features.twig' with {block: section} %}
+                {% include 'partials/_section_features.twig' with {visible: section.visible, content: 'section_features'} %}
             {% endif %}
 
             {% if section.name == 'section_products' %}
