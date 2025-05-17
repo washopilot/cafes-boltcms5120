@@ -14,7 +14,7 @@
                                 {# dump(slide.image_slide) #}
                                 <!-- Slider-N -->
                                 <rs-slide style="position: absolute;" data-key="slider-{{loop.index}}" data-title="Slide" data-in="x:(100%);" data-out="x:(-60%);">
-                                    <img src="{{asset('demos/skincare/images/slider/dummy.png')}}" title="{{slide.image_slide.filename}}" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{slide.image_slide|thumbnail(1920, 1080)}}" data-parallax="off" {% if slide.video_slide.path is empty %} data-panzoom="d:9000ms;ss:100%;se:120%;os:0px/0;oe:0px/0px;" {% endif %} data-no-retina>
+                                    <img src="{{asset('demos/skincare/images/slider/dummy.png')}}" title="{{slide.image_slide.filename}}" width="1920" height="1080" class="rev-slidebg tp-rs-img rs-lazyload" data-lazyload="{{slide.image_slide|thumbnail(960, 540, fit="c")}}" data-parallax="off" {% if slide.video_slide.path is empty %} data-panzoom="d:9000ms;ss:100%;se:120%;os:0px/0;oe:0px/0px;" {% endif %} data-no-retina>
                                     {% if slide.video_slide.path is not empty %}
                                         <rs-bgvideo data-video="w:100%;h:100%;nse:false;l:true;ptimer:false;vfc:true;" data-mp4="{{slide.video_slide.path}}"></rs-bgvideo>
                                     {% endif %}
