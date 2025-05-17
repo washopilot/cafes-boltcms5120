@@ -280,6 +280,7 @@ section-features:
                             type: image
                             extensions: [png]
                             label: Image
+                            alt: false
                     default:
                         title: Aquí el título grande
                         subtitle: Aquí el título pequeño
@@ -493,6 +494,7 @@ products:
             fixture_format: "€ {randomDigitNotNull}0,-"
         image:
             type: image
+            alt: false
         teaser:
             type: redactor
             fixture_format: "{paragraph}"
