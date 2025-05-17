@@ -13,7 +13,7 @@
             {% endif %}
 
             {% if section.name == 'section_products' %}
-                {% include 'partials/_section_products.twig' with {block: section} %}
+                {% include 'partials/_section_products.twig' with {visible: section.visible, content:'section-products'} %}
             {% endif %}
 
             {% if section.name == 'section_ticker' %}

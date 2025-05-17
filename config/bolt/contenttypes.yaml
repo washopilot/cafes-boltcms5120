@@ -289,6 +289,47 @@ section-features:
     icon_many: "fa:lightbulb"
     icon_one: "fa:lightbulb"
 
+section-products:
+    name: Section Products
+    singular_name: Section Products
+    show_in_menu: Auxiliars
+    fields:
+        title:
+            type: text
+            class: inline
+            label: Title
+            default: Aquí va el título grande
+            group: Content
+        subtitle:
+            type: text
+            class: inline
+            label: Subtitle
+            default: Aquí va el título pequeño
+        rotated_text:
+            type: text
+            class: inline
+            label: Rotated Text
+            default: "100% Organic &#9670; Palm Oil &#9670; Healthy &#9670; Pure &amp; Fresh &#9670;"
+        items:
+            type: collection
+            label: Items to show
+            group: Items
+            fields:
+                item:
+                    type: set
+                    label: Item
+                    fields:
+                        selected:
+                            type: select
+                            values: products/
+                            multiple: false
+                            postfix: |
+                                Select the product
+    singleton: true
+    viewless: true
+    icon_many: "fa:gem"
+    icon_one: "fa:gem"
+
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
 # setting for an individual page.
@@ -473,25 +514,16 @@ products:
             variant: inline
             label: Name of this product
             group: Block
-            fixture_format: "{catchPhrase}"
         feature_1:
             type: text
             variant: inline
-            fixture_format: "{bs}"
             label: "Key feature 1"
-        feature_2:
+        price_previous:
             type: text
             variant: inline
-            fixture_format: "{bs}"
-            label: "Key feature 2"
-        feature_3:
-            type: text
-            variant: inline
-            fixture_format: "{bs}"
-            label: "Key feature 3"
         price:
             type: text
-            fixture_format: "€ {randomDigitNotNull}0,-"
+            variant: inline
         image:
             type: image
             alt: false
