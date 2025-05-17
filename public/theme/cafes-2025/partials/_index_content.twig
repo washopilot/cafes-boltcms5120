@@ -17,7 +17,7 @@
             {% endif %}
 
             {% if section.name == 'section_ticker' %}
-                {% include 'partials/_section_ticker.twig' with {block: section} %}
+                {% include 'partials/_section_ticker.twig' with {visible: section.visible, contentype:'section-ticker'} %}
             {% endif %}
 
             {% if section.name == 'section_grid' %}

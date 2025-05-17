@@ -330,6 +330,33 @@ section-products:
     icon_many: "fa:gem"
     icon_one: "fa:gem"
 
+section-ticker:
+    name: Section Ticker
+    singular_name: Section Ticker Item
+    show_in_menu: Auxiliars
+    fields:
+        title:
+            type: text
+            class: inline
+            label: Title
+            default: Aquí va el título grande
+            group: Content
+        ticker_link:
+            type: text
+            label: Ticker Link
+            default: "https://example.org"
+            variant: inline
+            postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+        sort:
+            type: number
+            mode: integer
+            default: 10
+    singleton: false
+    viewless: true
+    order: sort
+    icon_many: "fa:star"
+    icon_one: "fa:star"
+
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
 # setting for an individual page.
