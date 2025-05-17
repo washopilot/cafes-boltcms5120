@@ -1,9 +1,10 @@
 {% if slider_below.visible %}
     <!-- Below Slider
-    ============================================= -->
+        ============================================= -->
     <div class="negative-service mw-md mx-auto">
-        <div class="negative-service-text color rounded shadow-sm">
-            <strong>2131+
+        <div class="negative-service-text color rounded shadow-sm below-slider">
+            {{slider_below|markdown}}
+            {# <strong>2131+
             </strong>
             Satisfied Customer<div class="d-inline-flex align-items-center text-warning mx-1">
                 <div class="bi-star-fill"></div>
@@ -12,6 +13,8 @@
                 <div class="bi-star-fill"></div>
                 <div class="bi-star-fill"></div>
             </div>
-            Reviews</div>
+            Reviews #}
+        </div>
     </div>
 {% endif %}
+    
