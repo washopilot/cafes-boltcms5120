@@ -5,11 +5,11 @@
         {% for section in sections %}
 
             {% if section.name == 'section_service' %}
-                {% include 'partials/_section_service.twig' with {visible: section.visible, content: 'section_service'} %}
+                {% include 'partials/_section_service.twig' with {visible: section.visible, content: 'section-service'} %}
             {% endif %}
 
             {% if section.name == 'section_features' %}
-                {% include 'partials/_section_features.twig' with {visible: section.visible, content: 'section_features'} %}
+                {% include 'partials/_section_features.twig' with {visible: section.visible, content: 'section-features'} %}
             {% endif %}
 
             {% if section.name == 'section_products' %}

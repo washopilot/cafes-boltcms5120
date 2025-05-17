@@ -181,9 +181,9 @@ homepage:
     singleton: true
     icon_many: "fa:home"
 
-section_service:
+section-service:
     name: Section Service
-    singular_name: section_service
+    singular_name: Section Service
     show_in_menu: Auxiliars
     fields:
         title:
@@ -243,9 +243,9 @@ section_service:
     icon_many: "fa:flag"
     icon_one: "fa:flag"
 
-section_features:
+section-features:
     name: Section Features
-    singular_name: section_features
+    singular_name: Section Features
     show_in_menu: Auxiliars
     fields:
         title:
