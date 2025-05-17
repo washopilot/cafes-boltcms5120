@@ -181,6 +181,68 @@ homepage:
     singleton: true
     icon_many: "fa:home"
 
+section_service:
+    name: Section Service
+    singular_name: section_service
+    show_in_menu: Auxiliars
+    fields:
+        title:
+            type: text
+            class: inline
+            label: Title
+            default: Aquí va el título grande
+            group: Content
+        subtitle:
+            type: text
+            class: inline
+            label: Subtitle
+            default: Aquí va el título pequeño
+        button_title:
+            type: text
+            variant: inline
+            label: Button message
+            default: Button message
+            postfix: |
+                Leave blank to hide the button
+        button_link:
+            type: text
+            label: Button Link
+            default: "https://example.org"
+            variant: inline
+            postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+        products_selected:
+            type: collection
+            label: Products to show
+            group: Products
+            fields:
+                product:
+                    type: set
+                    label: Product
+                    fields:
+                        title:
+                            type: text
+                            variant: inline
+                            label: Title
+                        selected:
+                            type: select
+                            values: products/
+                            multiple: false
+                            postfix: |
+                                Select the product
+                        button_link:
+                            type: text
+                            label: Button Link
+                            default: "https://example.org"
+                            variant: inline
+                            postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+                    default:
+                        title: Aquí el título grande
+                        button_link: "https://example.org"
+    singleton: true
+    viewless: true
+    icon_many: "fa:flag"
+    icon_one: "fa:flag"
+
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
 # setting for an individual page.

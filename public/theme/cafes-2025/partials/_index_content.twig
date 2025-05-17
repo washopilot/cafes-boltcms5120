@@ -5,7 +5,7 @@
         {% for section in sections %}
 
             {% if section.name == 'section_service' %}
-                {% include 'partials/_section_service.twig' with {block: section} %}
+                {% include 'partials/_section_service.twig' with {visible: section.visible, content: 'section_service'} %}
             {% endif %}
 
             {% if section.name == 'section_features' %}

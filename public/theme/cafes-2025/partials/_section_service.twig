@@ -1,46 +1,39 @@
-{% if block.visible %}
-<!-- Section Service
-============================================= -->
-<div class="section my-0 pb-0 pb-lg-5">
-    <div class="container mw-lg">
-        <div class="row g-5">
-            <div class="col-12 text-center mb-lg-5">
-                <p class="color text-uppercase ls-4 small mb-4">Know More About Us</p>
-                <h2 class="display-3 mb-5">Never too old for a makeover, Age flawlessly, Look like you desire, Your face is yours to make</h2>
-                <a href="#" class="button button-border border-color m-0 color h-bg-color h-text-light">Learn More</a>
-            </div>
+{% setcontent block = (content) returnsingle %}
 
-            <div class="col-md-6">
-                <div class="overflow-hidden position-relative dark parallax scroll-detect" data-class="up-lg:min-h-700 down-lg:min-h-400">
-                    <div>
-                        <img src="{{asset('demos/skincare/images/section/1.jpg')}}" alt="..." class="parallax-bg">
-                    </div>
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-between px-5 py-6">
-                        <div>
-                            <p class="text-uppercase ls-3 small mb-2 op-07">Shampoo</p>
-                            <h3 class="display-6 fw-lighter mb-0">Shop our Favourites</h3>
-                        </div>
-
-                        <a href="demo-skincare-shop.html" class="ps-2 text-white fs-1 bi-arrow-right-circle-fill h-translate-x-n-sm transform-ts"></a>
-                    </div>
+{% if visible %}
+    <!-- Section Service
+        ============================================= -->
+    <div class="section my-0 pb-0 pb-lg-5">
+        <div class="container mw-lg">
+            <div class="row g-5">
+                <div class="col-12 text-center mb-lg-5">
+                    <p class="color text-uppercase ls-4 small mb-4">{{block.subtitle|default('subtitle')}}</p>
+                    <h2 class="display-3 mb-5">{{block.title|default('title')}}</h2>
+                    {% if block.button_title is not empty %}
+                        <a href="{{absolute_link(block.button_link|e)}}" class="button button-border border-color m-0 color h-bg-color h-text-light">{{block.button_title}}</a>
+                    {% endif %}
                 </div>
-            </div>
-            <div class="col-md-6">
-                <div class="overflow-hidden position-relative dark parallax scroll-detect" data-class="up-lg:min-h-700 down-lg:min-h-400">
-                    <div>
-                        <img src="{{asset('demos/skincare/images/section/2.jpg')}}" alt="..." class="parallax-bg">
-                    </div>
-                    <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-between px-5 py-6">
-                        <div>
-                            <p class="text-uppercase ls-3 small mb-2 op-07">Super Serum</p>
-                            <h3 class="display-6 fw-lighter mb-0">Just Arrived</h3>
-                        </div>
 
-                        <a href="demo-skincare-shop.html" class="ps-2 text-white fs-1 bi-arrow-right-circle-fill h-translate-x-n-sm transform-ts"></a>
+                {% for product in block.products_selected %}
+                    {% setcontent product_selected = 'products' where {id: product.selected} %}
+                    <div class="col-md-6">
+                        <div class="overflow-hidden position-relative dark parallax scroll-detect" data-class="up-lg:min-h-700 down-lg:min-h-400">
+                            <div>
+                                <img src="{{product_selected.image|thumbnail(604,900,fit='crop')}}" alt="..." class="parallax-bg">
+                            </div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-between px-5 py-6">
+                                <div>
+                                    <p class="text-uppercase ls-3 small mb-2 op-07">{{product_selected.title}}</p>
+                                    <h3 class="display-6 fw-lighter mb-0">{{product.title}}</h3>
+                                </div>
+
+                                <a href="{{absolute_link(product.button_link|e)}}" class="ps-2 text-white fs-1 bi-arrow-right-circle-fill h-translate-x-n-sm transform-ts"></a>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                {% endfor %}
+
             </div>
         </div>
     </div>
-</div>
 {% endif %}
