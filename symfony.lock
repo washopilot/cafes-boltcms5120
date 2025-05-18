@@ -194,6 +194,9 @@
     "friendsofphp/proxy-manager-lts": {
         "version": "v1.0.1"
     },
+    "gregwar/captcha-bundle": {
+        "version": "v2.2.0"
+    },
     "guzzlehttp/psr7": {
         "version": "1.7.0"
     },
@@ -331,6 +334,18 @@
     },
     "phpstan/phpstan-symfony": {
         "version": "0.12.44"
+    },
+    "pixelopen/cloudflare-turnstile-bundle": {
+        "version": "0.1",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "main",
+            "version": "0.1",
+            "ref": "6173b9aff0056dd99ca70a2caa940cc7bcac0b4b"
+        },
+        "files": [
+            "config/packages/pixel_open_cloudflare_turnstile.yaml"
+        ]
     },
     "psr/cache": {
         "version": "1.0.1"
