@@ -644,6 +644,120 @@ quotations:
     order: title
     icon_many: "fa:credit-card"
     icon_one: "fa:credit-card"
+
+settings:
+    name: Settings
+    singular_name: Settings
+    fields:
+        title:
+            type: text
+            class: large
+            variant: inline
+            label: "Nombre de la empresa"
+            group: "Datos generales"
+        address:
+            type: text
+            variant: inline
+            label: "Dirección"
+        phone:
+            type: text
+            variant: inline
+            label: "Texto Teléfono"
+        phone_number:
+            type: text
+            variant: inline
+            label: "Teléfono (sólo número)"
+        email:
+            type: text
+            variant: inline
+        whatsapp:
+            type: text
+            variant: inline
+        logo:
+            type: image
+            label: Logo
+        logo_footer:
+            type: image
+            label: Logo Footer
+        sociales:
+            type: collection
+            label: Redes sociales
+            group: Redes sociales
+            limit: 5
+            fields:
+                contentset:
+                    type: set
+                    label: Set de Red Social
+                    fields:
+                        title:
+                            type: select
+                            values:
+                                [
+                                    facebook,
+                                    instagram,
+                                    youtube,
+                                    linkedin,
+                                    twitter,
+                                    pinterest,
+                                    whatsapp,
+                                    tiktok,
+                                ]
+                            class: large
+                            label: Título de la red social
+                            group: Social
+                            required: true
+                        contentlink:
+                            type: text
+                            label: Link
+                            placeholder: "https://example.org/"
+                            postfix: "Use este campo para añadir los enlaces o URL de la red social seleccionada."
+                            required: true
+        menus:
+            type: collection
+            label: Menus Cabecera
+            group: Menus
+            limit: 5
+            fields:
+                contentset:
+                    type: set
+                    label: Menu
+                    fields:
+                        title:
+                            type: text
+                            variant: inline
+                            group: Enlace
+                            label: Título del enlace
+                        contentlink:
+                            type: text
+                            label: Enlace
+                            variant: inline
+                            placeholder: "contenttype/slug or http://example.org/"
+                            postfix: |
+                                Utilícese para añadir un enlace al menú. Este puede ser 'interno'
+                                como <tt>page/about</tt>, si usted utiliza una combinación contenttype/slug.
+                                De otra manera utilice un URL apropiado, como `http://example.org`.
+        top_bar:
+            type: set
+            group: Barra superior
+            fields:
+                visible:
+                    type: checkbox
+                    label: Visible
+                    mode: switch
+                    variant: inline
+                title:
+                    type: text
+                    variant: inline
+                    label: Texto informativo
+                    required: true
+    viewless: true
+    singleton: true
+    show_on_dashboard: false
+    default_status: published
+    sort: -id
+    icon_many: "fa:cogs"
+    icon_one: "fa:cog"
+
 # Possible field types:
 #
 # text - varchar(256) - input type text.
