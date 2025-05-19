@@ -121,5 +121,65 @@
         <target>Su nombre...</target>
       </segment>
     </unit>
+    <unit id="i9agx2B" name="Dirección de correo electrónico">
+      <segment>
+        <source>Dirección de correo electrónico</source>
+        <target>Dirección de correo electrónico</target>
+      </segment>
+    </unit>
+    <unit id="8NWEKEb" name="Su correo...">
+      <segment>
+        <source>Su correo...</source>
+        <target>Su correo...</target>
+      </segment>
+    </unit>
+    <unit id="0mWb37D" name="En qué necesita asistencia?">
+      <segment>
+        <source>En qué necesita asistencia?</source>
+        <target>En qué necesita asistencia?</target>
+      </segment>
+    </unit>
+    <unit id="CmgNCGv" name="Ventas">
+      <segment>
+        <source>Ventas</source>
+        <target>Ventas</target>
+      </segment>
+    </unit>
+    <unit id="ZGsrOBb" name="Franquicias">
+      <segment>
+        <source>Franquicias</source>
+        <target>Franquicias</target>
+      </segment>
+    </unit>
+    <unit id="dKqI_IC" name="Distribuciones">
+      <segment>
+        <source>Distribuciones</source>
+        <target>Distribuciones</target>
+      </segment>
+    </unit>
+    <unit id="7gC5b.8" name="Descripción">
+      <segment>
+        <source>Descripción</source>
+        <target>Descripción</target>
+      </segment>
+    </unit>
+    <unit id="a5AGao4" name="Por favor describa su necesidad…">
+      <segment>
+        <source>Por favor describa su necesidad…</source>
+        <target>Por favor describa su necesidad…</target>
+      </segment>
+    </unit>
+    <unit id="44sw47e" name="Enviar solicitud »">
+      <segment>
+        <source>Enviar solicitud »</source>
+        <target>Enviar solicitud »</target>
+      </segment>
+    </unit>
+    <unit id="PIZa9Ll" name="Enviar su solicitud »">
+      <segment>
+        <source>Enviar su solicitud »</source>
+        <target>Enviar su solicitud »</target>
+      </segment>
+    </unit>
   </file>
 </xliff>

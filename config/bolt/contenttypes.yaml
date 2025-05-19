@@ -156,9 +156,9 @@ homepage:
                                 Modify in Auxiliars > Section Ticker
                     default:
                         visible: 1
-                section_grid:
+                section_request:
                     type: set
-                    label: Section Grid
+                    label: Section Request
                     fields:
                         visible:
                             type: checkbox
@@ -170,7 +170,7 @@ homepage:
                             class: d-none
                             label: "Tip"
                             postfix: |
-                                Modify in Auxiliars > Section Grid
+                                Modify in Auxiliars > Section Request
                     default:
                         visible: 1
         # slug:
@@ -356,6 +356,36 @@ section-ticker:
     order: sort
     icon_many: "fa:star"
     icon_one: "fa:star"
+
+section-request:
+    name: Section Request
+    singular_name: Section Request
+    show_in_menu: Auxiliars
+    fields:
+        title:
+            type: text
+            class: inline
+            label: Title
+            default: Aquí va el título grande
+            group: Content
+        subtitle:
+            type: text
+            class: inline
+            label: Subtitle
+            default: Aquí va el título pequeño
+        content:
+            type: textarea
+            class: inline
+            label: Content
+            default: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        image:
+            type: image
+            label: Image
+            alt: false
+    singleton: true
+    viewless: true
+    icon_many: "fa:envelope"
+    icon_one: "fa:envelope"
 
 # Pages can be used for the more 'static' pages on your site. This content-type
 # has a 'templateselect' field, which allows you to override the record_template
@@ -614,7 +644,6 @@ quotations:
     order: title
     icon_many: "fa:credit-card"
     icon_one: "fa:credit-card"
-
 # Possible field types:
 #
 # text - varchar(256) - input type text.

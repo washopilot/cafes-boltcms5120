@@ -6,7 +6,7 @@ templates: # Override the global Twig templates if you want
 #        subject: @theme/subject.twig
 #        files: @theme/file_browser.twig
 feedback:
-  success: Quotation request has been received. We'll be in touch soon.
+  success: Hemos recibido tu solicitud. Nos pondremos en contacto pronto.
   error: There are errors in the form. Please fix them, before trying to resubmit
 database:
   contenttype:
@@ -25,31 +25,31 @@ fields:
     type: email
     options:
       required: true
-      label: Email address
+      label: Dirección de correo electrónico
       attr:
-        placeholder: Your email...
+        placeholder: Su correo...
       constraints: [NotBlank, Email]
   needhelp:
     type: choice
     options:
       required: true
-      label: What project do you need help with?
+      label: En qué necesita asistencia?
       choices:
         {
-          "Web development": "web-development",
-          "Mobile development": "mobile-development",
-          "Marketing": "marketing",
+          "Ventas": "sales",
+          "Franquicias": "franchises",
+          "Distribuciones": "distributions",
         }
   details:
     type: textarea
     options:
       required: true
-      label: Description
+      label: Descripción
       attr:
-        placeholder: Please describe your desired website or app…
+        placeholder: Por favor describa su necesidad…
   submit:
     type: submit
     options:
-      label: Request quotation »
+      label: Enviar su solicitud »
       attr:
         class: button primary

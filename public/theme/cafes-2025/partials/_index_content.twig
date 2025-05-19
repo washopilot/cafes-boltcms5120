@@ -20,8 +20,8 @@
                 {% include 'partials/_section_ticker.twig' with {visible: section.visible, contentype:'section-ticker'} %}
             {% endif %}
 
-            {% if section.name == 'section_grid' %}
-                {% include 'partials/_section_grid.twig' with {block: section} %}
+            {% if section.name == 'section_request' %}
+                {% include 'partials/_section_request.twig' with {visible: section.visible, content:'section-request'} %}
             {% endif %}
 
         {% endfor %}
