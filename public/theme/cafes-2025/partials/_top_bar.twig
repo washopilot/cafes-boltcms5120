@@ -1,7 +1,11 @@
-<!-- Top Bar
+{% dump(block) %}
+
+{% if block.visible %}
+    <!-- Top Bar
     ============================================= -->
-<div id="top-bar" class="py-3 border-0" style="background: var(--cnvs-color2);">
-    <div class="container text-center color">
-        <div style="font-size: .9375rem;">Get 20% off* your First Order &amp; Free Shipping Upto $99</div>
+    <div id="top-bar" class="py-3 border-0" style="background: var(--cnvs-color2);">
+        <div class="container text-center color">
+            <div style="font-size: .9375rem;">{{block.title}}</div>
+        </div>
     </div>
-</div>
+{% endif %}

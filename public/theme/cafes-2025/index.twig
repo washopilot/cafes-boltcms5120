@@ -1,8 +1,12 @@
 {% extends 'partials/_master.twig' %}
+{% setcontent settings = 'settings'  %}
 
 {% block main %}
 
-    {% include 'partials/_top_bar.twig' %}
+    {% if settings is not null %}
+        {% include 'partials/_top_bar.twig' with {block: settings.top_bar} %}
+    {% endif %}
+
     {% include 'partials/_header.twig' %}
 
     {% if record.slider_collection is not null %}
