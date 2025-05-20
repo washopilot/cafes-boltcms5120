@@ -8,7 +8,7 @@
     {% endif %}
 
     {% if settings is not null %}
-        {% include 'partials/_header.twig' with {block: settings.menus} %}
+        {% include 'partials/_header.twig' with {block: settings} %}
     {% endif %}
 
     {% if record.slider_collection is not null %}

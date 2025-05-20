@@ -310,6 +310,11 @@ section-products:
             class: inline
             label: Rotated Text
             default: "100% Organic &#9670; Palm Oil &#9670; Healthy &#9670; Pure &amp; Fresh &#9670;"
+        rotated_logo:
+            type: image
+            extensions: [png]
+            label: Image
+            alt: false
         items:
             type: collection
             label: Items to show
@@ -757,7 +762,6 @@ settings:
     sort: -id
     icon_many: "fa:cogs"
     icon_one: "fa:cog"
-
 # Possible field types:
 #
 # text - varchar(256) - input type text.

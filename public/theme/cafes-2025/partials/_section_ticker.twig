@@ -3,12 +3,12 @@
 {% if visible %}
     <!-- Section Ticker
     ============================================= -->
-    <div class="py-4 bg-color my-3">
+    <div class="py-4 bg-color">
         <div class="ticker-wrap pause-on-hover">
             <div class="ticker">
                 {% for ticker in tickers %}
                     <a href="{{absolute_link(ticker.ticker_link|e)}}" class="ticker-item">{{ticker.title}}</a>
-                    <span class="text-white op-01 ticker-item">&#9670;</span>
+                    <span class="ticker-item">&#9670;</span>
                 {% endfor %}
             </div>
         </div>

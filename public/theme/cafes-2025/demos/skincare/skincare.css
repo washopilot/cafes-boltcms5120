@@ -139,7 +139,7 @@
 }
 
 .ticker-wrap {
-	--cnvs-ticker-duration: 300s;
+	--cnvs-ticker-duration: 100s;
 	width: 100%;
 	overflow: hidden;
 	box-sizing: content-box;

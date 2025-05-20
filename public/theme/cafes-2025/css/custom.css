@@ -5,13 +5,52 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 
+:root {
+    --cnvs-themecolor: rgb(0, 0, 0);
+    --cnvs-themecolor-rgb: 0, 0, 0;
+    --cnvs-body-font: "tenon", sans-serif;
+    --cnvs-primary-font: "abril-display", serif;
+    --cnvs-body-color: #ffb81dff;
+    --cnvs-color: #ffffff;
+    --cnvs-color2: rgb(255, 244, 220);
+    --cnvs-text-color: var(--cnvs-themecolor);
+    --cnvs-header-bg: var(--cnvs-body-color);
+}
+
 .below-slider > p {
-	margin: 0;
+    margin: 0;
 }
 
 #header {
     position: sticky;
     top: 0;
     z-index: 1030;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 992px) {
+    .negative-service {
+        position: relative;
+        transform: translateY(0%);
+        z-index: 4;
+    }
+}
+
+.negative-service-text {
+    background-color: var(--cnvs-themecolor);
+    color: var(--cnvs-body-color) !important;
+    text-align: center;
+    padding: 16px;
+}
+
+.bg-color .ticker-wrap .ticker-item {
+    text-shadow: unset;
+}
+
+.ticker > a {
+    color: var(--cnvs-body-color) !important;
+}
+
+.ticker > span {
+    color: var(--cnvs-body-color) !important;
 }

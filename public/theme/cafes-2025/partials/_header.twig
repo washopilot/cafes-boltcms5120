@@ -2,14 +2,13 @@
 
 <!-- Header
 ============================================= -->
-<header id="header" class="header-size-sm" data-sticky-shrink="false" style="border-color: var(--cnvs-color);">
-    <div class="container">
+    <header id="header" class="header-size-sm" data-sticky-shrink="false" style="border-color: var(--cnvs-color);"> <div class="container">
         <div class="header-row justify-content-lg-between">
 
             <nav class="primary-menu top-primary-menu col-lg-5 order-last order-lg-first mobile-menu-off-canvas">
 
                 <ul class="menu-container">
-                    {% for menu in block %}
+                    {% for menu in block.menus %}
                         <li class="menu-item">
                             <a class="menu-link" href="{{absolute_link(menu.contentlink|e)}}">
                                 <div>{{menu.title}}</div>
@@ -24,7 +23,9 @@
             <!-- Logo
             ============================================= -->
             <div id="logo" class="mx-lg-auto col-lg-2 justify-content-center">
-                <a class="color fst-italic" href="#">canvas.</a>
+                <a class="color fst-italic" href="/">
+                    <img src="{{block.logo|thumbnail(200,100,fit='f')}}" alt="...">
+                </a>
             </div>
             <!-- #logo end -->
 
