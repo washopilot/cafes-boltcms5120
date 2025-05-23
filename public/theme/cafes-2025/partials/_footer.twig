@@ -5,25 +5,29 @@
         class="container py-4">
 
         <!-- Footer Widgets
-            ============================================= -->
+                        ============================================= -->
         <div class="footer-widgets-wrap">
 
             <div class="row col-mb-50">
                 <div class="col-md-4">
 
-                    <div class="widget subscribe-widget">
-                        <h3 class="text-transform-none ls-0 border-bottom d-inline-block mb-5">Subscribe to Our Newsletter</h3>
+                    <div class="widget widget_links">
+                        <h3 class="text-transform-none ls-0 border-bottom d-inline-block mb-5">{{block.menus_footer_title}}</h3>
 
-                        <p>Get Important News, Amazing Offers &amp; Inside Scoops weekly right to your Inbox.</p>
-                        <div class="widget-subscribe-form-result"></div>
-                        <form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">
-                            <div class="input-group mx-auto">
-                                <input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">
-                                <button class="btn border-start-0" type="submit">
-                                    <i class="bi-arrow-right h-op-08"></i>
-                                </button>
-                            </div>
-                        </form>
+                        <p>{{block.menus_footer_description}}</p>
+                        <ul>
+                            {% for item in block.menus_footer %}
+                                <li class="mb-2">
+                                    <a class="ls-1 text-light" href="{{absolute_link(item.contentlink|e)}}">{{item.title}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+
+                        <div class="mx-lg-auto justify-content-center">
+                            <a class="color fst-italic" href="/">
+                                <img src="{{block.logo_footer|thumbnail(300,200,fit='f')}}" alt="...">
+                            </a>
+                        </div>
                     </div>
 
                 </div>
@@ -33,17 +37,17 @@
 
                     <div class="widget widget_links">
 
-                        <h3 class="text-transform-none ls-0 border-bottom d-inline-block mb-5">Contact Us</h3>
+                        <h3 class="text-transform-none ls-0 border-bottom d-inline-block mb-5">Contáctanos</h3>
 
                         <ul>
                             <li class="mb-2">
-                                <a class="ls-1 text-light" href="mailto:noreply@canvas.com">noreply@canvas.com</a>
+                                <a class="ls-1 text-light" href="mailto:{{block.email}}">{{block.email}}</a>
                             </li>
                             <li class="mb-2">
-                                <a class="ls-1 text-light" href="tel:+0011122233">0-111-222-33</a>
+                                <a class="ls-1 text-light" href="{{block.phone_link}}">{{block.phone_text}}</a>
                             </li>
-                            <li>
-                                <a class="ls-1 text-light" href="demo-skincare-login.html">Sign In/Register</a>
+                            <li class="mb-2">
+                                <a class="ls-1 text-light" href="https://wa.me/{{block.whatsapp}}?text={{block.whatsapp_message|url_encode}}" target="_blank">Whatsapp</a>
                             </li>
                         </ul>
 
@@ -55,18 +59,14 @@
 
                     <div class="widget widget_links">
 
-                        <h3 class="text-transform-none ls-0 border-bottom d-inline-block mb-5">Follow Us</h3>
+                        <h3 class="text-transform-none ls-0 border-bottom d-inline-block mb-5">Síguenos</h3>
 
                         <ul>
-                            <li class="mb-2">
-                                <a class="ls-1 text-light" target="_blank" href="https://facebook.com/SemiColonWeb">Facebook</a>
-                            </li>
-                            <li class="mb-2">
-                                <a class="ls-1 text-light" target="_blank" href="https://twitter.com/__semicolon">Twitter</a>
-                            </li>
-                            <li>
-                                <a class="ls-1 text-light" target="_blank" href="https://instagram.com/semicolonweb">Instagram</a>
-                            </li>
+                            {% for social in block.sociales %}
+                                <li class="mb-2">
+                                    <a class="ls-1 text-light" target="_blank" href="{{absolute_link(social.contentlink|e)}}">{{social.title|capitalize}}</a>
+                                </li>
+                            {% endfor %}
                         </ul>
 
                     </div>
@@ -77,24 +77,14 @@
 
     </div>
     <!-- Copyrights
-        ============================================= -->
+                            ============================================= -->
     <div id="copyrights" style="border-top: 1px solid rgba(255,255,255,.2)">
         <div class="container">
 
             <div class="row col-mb-30">
-
                 <div class="col-md-6 text-center text-md-start">
-                    Copyrights &copy; 2023 All Rights Reserved by Canvas Inc.
+                    Copyrights &copy; 2025 All Rights Reserved by Cafés de Loja.
                 </div>
-
-                <div class="col-md-6 text-center text-md-end">
-                    <div class="copyright-links">
-                        <a href="#">Terms of Use</a>
-                        /
-                        <a href="#">Privacy Policy</a>
-                    </div>
-                </div>
-
             </div>
 
         </div>

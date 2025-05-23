@@ -664,18 +664,21 @@ settings:
             type: text
             variant: inline
             label: "Dirección"
-        phone:
+        phone_text:
             type: text
             variant: inline
-            label: "Texto Teléfono"
-        phone_number:
+            label: "Texto Teléfono (etiqueta a mostrar)"
+        phone_link:
             type: text
             variant: inline
-            label: "Teléfono (sólo número)"
+            label: "Texto Teléfono (enlace)"
         email:
             type: text
             variant: inline
         whatsapp:
+            type: text
+            variant: inline
+        whatsapp_message:
             type: text
             variant: inline
         logo:
@@ -702,9 +705,8 @@ settings:
                                     instagram,
                                     youtube,
                                     linkedin,
-                                    twitter,
+                                    x,
                                     pinterest,
-                                    whatsapp,
                                     tiktok,
                                 ]
                             class: large
@@ -720,12 +722,46 @@ settings:
         menus:
             type: collection
             label: Menus Cabecera
-            group: Menus
+            group: Menus Cabecera
             limit: 5
             fields:
                 contentset:
                     type: set
                     label: Menu
+                    fields:
+                        title:
+                            type: text
+                            variant: inline
+                            group: Enlace
+                            label: Título del enlace
+                        contentlink:
+                            type: text
+                            label: Enlace
+                            variant: inline
+                            placeholder: "contenttype/slug or http://example.org/"
+                            postfix: |
+                                Utilícese para añadir un enlace al menú. Este puede ser 'interno'
+                                como <tt>page/about</tt>, si usted utiliza una combinación contenttype/slug.
+                                De otra manera utilice un URL apropiado, como `http://example.org`.
+        menus_footer_title:
+            type: text
+            variant: inline
+            label: Título
+            group: Menus footer
+            default: "Título del Menú de Footer"
+        menus_footer_description:
+            type: textarea
+            variant: inline
+            label: Descripción
+            default: "Descripción para el Menú de Footer"
+        menus_footer:
+            type: collection
+            label: Menus Footer
+            limit: 5
+            fields:
+                contentset:
+                    type: set
+                    label: Menu Footer
                     fields:
                         title:
                             type: text

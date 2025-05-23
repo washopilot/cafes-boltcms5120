@@ -23,6 +23,9 @@
         {% include 'partials/_index_content.twig' with {sections: record.sections_home} %}
     {% endif %}
 
-    {% include 'partials/_footer.twig' %}
+    {% if settings is not null %}
+        {% include 'partials/_footer.twig' with {block: settings} %}
+    {% endif %}
+
 
 {% endblock main %}
