@@ -9,7 +9,8 @@
 
         <!-- Font Imports -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap">
-        <link rel="stylesheet" href="https://use.typekit.net/aay8rzy.css">
+        <link
+        rel="stylesheet" href="https://use.typekit.net/aay8rzy.css">
 
         <!-- Core Style -->
         <link
@@ -34,7 +35,15 @@
         name="viewport" content="width=device-width, initial-scale=1">
 
         <!-- Document Title ============================================= -->
-        <title>Demo Skincare | Canvas</title>
+        <title>
+            {%- if record|default and record.title -%}
+                {{- record.title ~ ' | ' -}}
+            {%- endif -%}
+            {{- config.get('general/sitename') -}}
+            {%- if record|default == null and config.has('general/payoff') -%}
+                {{- ' | ' ~ config.get('general/payoff') -}}
+            {%- endif -%}
+        </title>
     </head>
 
     <body

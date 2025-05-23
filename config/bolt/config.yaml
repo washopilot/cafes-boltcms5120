@@ -2,8 +2,8 @@
 # in the project root.
 
 # The name of the website
-sitename: Bolt Project Website
-payoff: The amazing payoff goes here
+sitename: Cafés de Loja Website
+payoff: Desde Loja, el sabor del mejor café
 
 secret: '%env(APP_SECRET)%'
 
