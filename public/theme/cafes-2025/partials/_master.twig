@@ -1,3 +1,6 @@
+{% block master_vars %} {# Empty by default #}
+{# dump(isListingProducts is defined) #}
+
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
     <head>
@@ -24,7 +27,11 @@
         <link rel="stylesheet" href="{{ asset('demos/skincare/css/rs6.css') }}">
         <link
         rel="stylesheet" href="{{ asset('demos/skincare/scroll/scroll.css') }}">
-
+        {% if isListingProducts is defined %}
+        	<link rel="stylesheet" href="{{asset('css/swiper.css')}}">
+	        <link rel="stylesheet" href="{{asset('css/components/ion.rangeslider.css')}}">
+        {% endif %}
+        
         <!-- Niche Demos -->
         <link
         rel="stylesheet" href="{{ asset('demos/skincare/skincare.css') }}">
@@ -71,6 +78,11 @@
         <script src="{{ asset('demos/skincare/js/rs/rbtools.min.js') }}"></script>
         <script src="{{ asset('demos/skincare/js/rs/rs6.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+
+        {% if isListingProducts is defined %}
+            <!-- Range Slider Plugin -->
+            <script src="{{asset('js/components/rangeslider.min.js')}}"></script>
+        {% endif %}
 
         <script>
             var tpj = jQuery;
@@ -164,7 +176,147 @@
             }; // End of RevInitScript
 
             var circleType = new CircleType(document.getElementById("rotated-text")).radius(86);
+
         </script>
+
+        {% if isListingProducts is defined %}
+        <script>
+            jQuery(".button-filter").click(function(){
+                jQuery(".skincare-filter").toggleClass("skincare-filter-hide");
+                jQuery(this).toggleClass("button-filter-active-hide");
+                SEMICOLON.Modules.gridInit();
+            });
+
+            var priceRangefrom = 0,
+                priceRangeto = 0,
+                $container = jQuery('#shop');
+
+            jQuery(window).on( 'load', function(){
+
+                jQuery(window).resize(function() {
+                    $container.isotope('layout');
+                });
+
+            });
+
+            jQuery(document).ready( function($){
+                var $priceRange = jQuery(".price-range"),
+                    $priceInputFrom = jQuery(".price-range-from"),
+                    $priceInputTo = jQuery(".price-range-to"),
+                    min = 9.99,
+                    max = 139.99,
+                    prefix = '$ ';
+
+                $priceRange.ionRangeSlider({
+                    skin: "round",
+                    type: "double",
+                    min: min,
+                    max: max,
+                    from: min,
+                    to: max,
+                    prefix: prefix,
+                    hide_min_max: true,
+                    hide_from_to: true,
+                    onStart: function(data) {
+                        priceRangefrom = data.from;
+                        priceRangeto = data.to;
+                        updateInputs(data);
+                    },
+                    onChange: updateInputs,
+                    onFinish: function (data) {
+                        priceRangefrom = data.from;
+                        priceRangeto = data.to;
+
+                        $container.isotope({
+                            filter: function() {
+                                if( jQuery(this).find('.product-price').find('ins').length > 0 ) {
+                                    var price = jQuery(this).find('.product-price ins').text();
+                                } else {
+                                    var price = jQuery(this).find('.product-price').text();
+                                }
+
+                                priceNum = price.split("$");
+
+                                return ( priceRangefrom <= priceNum[1] && priceRangeto >= priceNum[1] );
+                            }
+                        });
+                    }
+                });
+
+                function updateInputs (data) {
+                    from = data.from;
+                    to = data.to;
+
+                    $priceInputFrom.text(prefix + from);
+                    $priceInputTo.text(prefix + to);
+                }
+
+                jQuery(".dropdown-item span").on( 'click', function(){
+                    var displayText = jQuery(this).text();
+                    jQuery("#shop-filter-btn").html(displayText);
+                    jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
+                });
+            });
+
+            jQuery(window).on( 'load', function(){
+                jQuery('.shop-filter').find('li:not(.custom-filter-reset)').each( function(){
+                    var element = jQuery(this),
+                        elementFilter = element.children().attr('data-filter'),
+                        elementFilterContainer = element.parents('.custom-filter').attr('data-container');
+
+                    elementFilterCount = Number( jQuery(elementFilterContainer).find( '.product' ).filter( elementFilter ).length );
+
+                    element.find('.shop-filter-count').text(elementFilterCount);
+
+                });
+
+                jQuery('#shop').isotope({
+                    getSortData: {
+                        name_az: '.product-title',
+                        name_za: '.product-title',
+                        price_lh: function( itemElem ) {
+                            if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
+                                var price = jQuery(itemElem).find('.product-price ins').text();
+                            } else {
+                                var price = jQuery(itemElem).find('.product-price').text();
+                            }
+
+                            priceNum = price.split("$");
+
+                            return parseFloat( priceNum[1] );
+                        },
+                        price_hl: function( itemElem ) {
+                            if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
+                                var price = jQuery(itemElem).find('.product-price ins').text();
+                            } else {
+                                var price = jQuery(itemElem).find('.product-price').text();
+                            }
+
+                            priceNum = price.split("$");
+
+                            return parseFloat( priceNum[1] );
+                        }
+                    },
+                    sortAscending: {
+                        name_az: true,
+                        name_za: false,
+                        price_lh: true,
+                        price_hl: false
+                    }
+                });
+
+                jQuery(document).on('click', '.shop-sorting li a', function(e) {
+                    e.preventDefault();
+                    var $li = jQuery(this).parent();
+                    $li.siblings().removeClass('active-filter');
+                    $li.addClass('active-filter');
+                    var sortByValue = jQuery(this).attr('data-sort-by');
+                    jQuery('#shop').isotope({ sortBy: sortByValue });
+                });
+            });
+        </script>
+        {% endif %}
 
     </body>
 </html>
+{% endblock %}

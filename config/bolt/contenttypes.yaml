@@ -600,6 +600,7 @@ products:
             default: 10
     show_on_dashboard: true
     viewless: true
+    viewless_listing: false
     default_status: published
     searchable: false
     order: order

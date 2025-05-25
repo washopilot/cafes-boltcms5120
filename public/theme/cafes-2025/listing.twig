@@ -1,0 +1,29 @@
+{% extends 'partials/_master.twig' %}
+{% setcontent settings = 'settings' returnsingle %}
+
+{% block master_vars %}
+    {# Variables accessible in _master.twig #}
+    {% set isListingProducts = true %}
+    {{ parent() }} {# Preserve any existing vars #}
+{% endblock %}
+
+{% block main %}
+    {% set isListingProducts = true %}
+
+    {% if settings is not null %}
+        {% include 'partials/_top_bar.twig' with {block: settings.top_bar} %}
+    {% endif %}
+
+    {% if settings is not null %}
+        {% include 'partials/_header.twig' with {block: settings} %}
+    {% endif %}
+
+    {# TODO --- listing products ---- #}
+    {% include 'partials/_index_content_products.twig' with {contenttype: 'products'} %}
+
+    {% if settings is not null %}
+        {% include 'partials/_footer.twig' with {block: settings} %}
+    {% endif %}
+
+
+{% endblock main %}
