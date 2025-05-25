@@ -4,7 +4,10 @@
 {% block master_vars %}
     {# Variables accessible in _master.twig #}
     {% set isListingProducts = true %}
-    {{ parent() }} {# Preserve any existing vars #}
+    {% set price_range_from = settings.price_range_from %}
+    {% set price_range_to = settings.price_range_to %}
+    {{ parent() }}
+    {# Preserve any existing vars #}
 {% endblock %}
 
 {% block main %}
@@ -19,7 +22,7 @@
     {% endif %}
 
     {# TODO --- listing products ---- #}
-    {% include 'partials/_index_content_products.twig' with {contenttype: 'products'} %}
+    {% include 'partials/_index_content_products.twig' with {contenttype: 'products', banner: settings.banner_products } %}
 
     {% if settings is not null %}
         {% include 'partials/_footer.twig' with {block: settings} %}

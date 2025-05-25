@@ -8,8 +8,8 @@
 :root {
     --cnvs-themecolor: rgb(0, 0, 0);
     --cnvs-themecolor-rgb: 0, 0, 0;
-    --cnvs-body-font: "Marcellus", serif;     
-    --cnvs-primary-font: "Marcellus", serif;  
+    --cnvs-body-font: "Marcellus", serif;
+    --cnvs-primary-font: "Marcellus", serif;
     --cnvs-body-color: #ffb81dff;
     --cnvs-color: #ffffff;
     --cnvs-color2: rgb(255, 244, 220);
@@ -28,11 +28,11 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.top-primary-menu .menu-container>.menu-item>.menu-link {
-	color: var(--cnvs-text-color);
-	font-weight: 600;
-	font-size: .9325rem;
-	font-family: var(--cnvs-body-font) !important;
+.top-primary-menu .menu-container > .menu-item > .menu-link {
+    color: var(--cnvs-text-color);
+    font-weight: 600;
+    font-size: 0.9325rem;
+    font-family: var(--cnvs-body-font) !important;
 }
 
 @media (min-width: 992px) {
@@ -64,4 +64,12 @@
 
 .ticker > span {
     color: var(--cnvs-body-color) !important;
+}
+
+.custom-filter * {
+    font-size: 1rem !important;
+}
+
+.filter-by-price * {
+    font-size: 1rem !important;
 }

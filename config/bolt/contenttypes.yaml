@@ -604,7 +604,7 @@ products:
     default_status: published
     searchable: false
     order: order
-    taxonomy: [ tags ]
+    taxonomy: [tags]
     icon_many: "fa:gifts"
     icon_one: "fa:gift"
 
@@ -793,6 +793,23 @@ settings:
                     variant: inline
                     label: Texto informativo
                     required: true
+        banner_products:
+            type: image
+            group: Productos
+            label: Banner en Productos
+            alt: false
+        price_range_from:
+            type: number
+            label: Precio rango inferior
+            variant: inline
+            mode: float
+            default: 9.99
+        price_range_to:
+            type: number
+            label: Precio rango superior
+            variant: inline
+            mode: float
+            default: 139.99
     viewless: true
     singleton: true
     show_on_dashboard: false

@@ -1,5 +1,4 @@
 {% block master_vars %} {# Empty by default #}
-{# dump(isListingProducts is defined) #}
 
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
@@ -179,7 +178,7 @@
 
         </script>
 
-        {% if isListingProducts is defined %}
+        {% if isListingProducts is defined and price_range_from is defined and price_range_to is defined %}
         <script>
             jQuery(".button-filter").click(function(){
                 jQuery(".skincare-filter").toggleClass("skincare-filter-hide");
@@ -203,8 +202,8 @@
                 var $priceRange = jQuery(".price-range"),
                     $priceInputFrom = jQuery(".price-range-from"),
                     $priceInputTo = jQuery(".price-range-to"),
-                    min = 9.99,
-                    max = 139.99,
+                    min = {{price_range_from}},
+                    max = {{price_range_to}},
                     prefix = '$ ';
 
                 $priceRange.ionRangeSlider({
