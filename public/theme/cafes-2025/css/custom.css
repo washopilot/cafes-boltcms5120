@@ -73,3 +73,11 @@
 .filter-by-price * {
     font-size: 1rem !important;
 }
+
+#baristas .button.primary.btn:hover {
+    color: #ffffff;
+}
+
+#quotation .button.primary.btn:hover {
+    color: #ffffff;
+}

@@ -1,0 +1,55 @@
+# config/extensions/bolt-boltforms/quotation.yaml
+
+templates: # Override the global Twig templates if you want
+#        form: @theme/form.twig
+#        email: @theme/email.twig
+#        subject: @theme/subject.twig
+#        files: @theme/file_browser.twig
+feedback:
+  success: Hemos recibido tu solicitud. Nos pondremos en contacto pronto.
+  error: There are errors in the form. Please fix them, before trying to resubmit
+database:
+  contenttype:
+    name: quotations # save all form submissions to the quotations contenttype
+    ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
+fields:
+  name:
+    type: text
+    options:
+      required: true
+      label: Nombre
+      attr:
+        placeholder: Su nombre...
+      constraints: [NotBlank, { Length: { "min": 3, "max": 128 } }]
+  email:
+    type: email
+    options:
+      required: true
+      label: Dirección de correo electrónico
+      attr:
+        placeholder: Su correo...
+      constraints: [NotBlank, Email]
+  needhelp:
+    type: choice
+    options:
+      required: true
+      label: En qué necesita asistencia?
+      choices:
+        {
+          "Ventas": "sales",
+          "Franquicias": "franchises",
+          "Distribuciones": "distributions",
+        }
+  details:
+    type: textarea
+    options:
+      required: true
+      label: Descripción
+      attr:
+        placeholder: Por favor describa su necesidad…
+  submit:
+    type: submit
+    options:
+      label: Enviar su solicitud »
+      attr:
+        class: button primary

@@ -1,0 +1,36 @@
+{% extends 'partials/_master.twig' %}
+{% setcontent settings = 'settings' returnsingle %}
+
+
+{% block main %}
+    {% if settings is not null %}
+        {% include 'partials/_top_bar.twig' with {block: settings.top_bar} %}
+    {% endif %}
+
+    {% if settings is not null %}
+        {% include 'partials/_header.twig' with {block: settings} %}
+    {% endif %}
+
+    <div class="container">
+        <div id="content">
+            <div
+                class="content-wrap py-5">
+
+                <!-- Record Content-->
+                <article class="article py-0">
+                    <h1>{{ record|title }}</h1>
+
+                    {% with {'record': record} %}
+                    {{ block('sub_fields', 'helpers/_fields.twig') }}
+                    {% endwith %}
+                </article>
+                <!--/ Record Content-->
+            </div>
+        </div>
+    </div>
+
+    {% if settings is not null %}
+        {% include 'partials/_footer.twig' with {block: settings} %}
+    {% endif %}
+
+{% endblock main %}

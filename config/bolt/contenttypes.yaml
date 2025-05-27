@@ -401,35 +401,35 @@ section-request:
 # list the different types of services a company provides, you can group these
 # together.
 
-# pages:
-#     name: Pages
-#     singular_name: Page
-#     fields:
-#         title:
-#             type: text
-#             class: large
-#             group: content
-#         teaser:
-#             type: textarea
-#             postfix: |
-#                 A text-only version of the content, that can be used to "tease"
-#                 the content when it's used in listing pages or search results.
-#         image:
-#             type: image
-#             label: Highlighted image
-#         body:
-#             type: redactor
-#             height: 300px
-#         slug:
-#             type: slug
-#             uses: title
-#             group: Meta
-#         template:
-#             type: templateselect
-#             filter: '/^[^_].*\.twig$/'
-#     taxonomy: [ groups ]
-#     records_per_page: 5
-#     order: id
+pages:
+    name: Pages
+    singular_name: Page
+    fields:
+        title:
+            type: text
+            class: large
+            group: content
+        teaser:
+            type: textarea
+            postfix: |
+                A text-only version of the content, that can be used to "tease"
+                the content when it's used in listing pages or search results.
+        image:
+            type: image
+            label: Highlighted image
+        body:
+            type: redactor
+            height: 300px
+        slug:
+            type: slug
+            uses: title
+            group: Meta
+        template:
+            type: templateselect
+            filter: '/^[^_].*\.twig$/'
+    # taxonomy: [ groups ]
+    records_per_page: 5
+    order: id
 
 # Entries can be used for things like 'news' or 'blogpostings'. They have a
 # 'teaser', which can be used for a short blurb on listing-pages, allowing
@@ -612,6 +612,7 @@ quotations:
     name: Quotations
     singular_name: Quotation
     title_format: "Quotation request from: {name}"
+    show_in_menu: Requests
     fields:
         name:
             type: text
@@ -651,6 +652,49 @@ quotations:
     order: title
     icon_many: "fa:credit-card"
     icon_one: "fa:credit-card"
+
+baristas:
+    name: Baristas
+    singular_name: Barista
+    title_format: "Barista request from: {name}"
+    show_in_menu: Requests
+    fields:
+        name:
+            type: text
+            variant: inline
+            readonly: true
+        email:
+            type: text
+            variant: inline
+            readonly: true
+        needhelp:
+            type: text
+            variant: inline
+            readonly: true
+        details:
+            type: textarea
+            readonly: true
+        timestamp:
+            type: text
+            variant: inline
+            readonly: true
+        url:
+            type: text
+            variant: inline
+            readonly: true
+        path:
+            type: text
+            variant: inline
+            readonly: true
+        ip:
+            type: text
+            variant: inline
+            readonly: true
+    show_on_dashboard: false
+    viewless: true
+    default_status: held
+    searchable: false
+    order: title
 
 settings:
     name: Settings
