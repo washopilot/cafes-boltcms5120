@@ -105,6 +105,23 @@ homepage:
                                 Modify in Auxiliars > Section Service
                     default:
                         visible: 1
+                section_shops:
+                    type: set
+                    label: Section Shops
+                    fields:
+                        visible:
+                            type: checkbox
+                            label: Visible
+                            mode: switch
+                            variant: inline
+                        helpful_tip:
+                            type: text
+                            class: d-none
+                            label: "Tip"
+                            postfix: |
+                                Modify in Auxiliars > Section Shops
+                    default:
+                        visible: 1
                 section_features:
                     type: set
                     label: Section Features
@@ -242,6 +259,70 @@ section-service:
     viewless: true
     icon_many: "fa:flag"
     icon_one: "fa:flag"
+
+section-shops:
+    name: Section Shops
+    singular_name: Section Shops
+    show_in_menu: Auxiliars
+    fields:
+        title:
+            type: text
+            class: inline
+            label: Title
+            default: Aquí va el título grande
+            group: Content
+        subtitle:
+            type: text
+            class: inline
+            label: Subtitle
+            default: Aquí va el título pequeño
+        button_title:
+            type: text
+            variant: inline
+            label: Button message
+            default: Button message
+            postfix: |
+                Leave blank to hide the button
+        button_link:
+            type: text
+            label: Button Link
+            default: "https://example.org"
+            variant: inline
+            postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+        shops:
+            type: collection
+            label: Locales para mostrar
+            group: Locales
+            fields:
+                shop:
+                    type: set
+                    label: Shop
+                    fields:
+                        title:
+                            type: text
+                            variant: inline
+                            label: Title
+                        subtitle:
+                            type: text
+                            variant: inline
+                            label: SubTitle
+                        image:
+                            type: image
+                            label: Image
+                            alt: false
+                        button_link:
+                            type: text
+                            label: Button Link
+                            variant: inline
+                            postfix: "Use this to add a link for button. This could either be an 'internal' link like <tt>page//about</tt>, if you use a contentType/slug combination. Otherwise use a proper URL, like `https://example.org`."
+                    default:
+                        title: Aquí el título grande
+                        subtitle: Aquí el subtítulo pequeño
+                        button_link: "https://example.org"
+    singleton: true
+    viewless: true
+    # icon_many: "fa:flag"
+    # icon_one: "fa:flag"
 
 section-features:
     name: Section Features

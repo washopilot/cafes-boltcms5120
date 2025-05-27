@@ -1,0 +1,38 @@
+{% setcontent block = (content) returnsingle %}
+
+{% if visible %}
+    <!-- Section Service
+        ============================================= -->
+    <div id="section-service" class="section my-0 pb-0 pb-lg-5">
+        <div class="container mw-lg">
+            <div class="row g-5">
+                <div class="col-12 text-center mb-lg-5">
+                    <p class="color text-uppercase ls-4 small mb-4">{{block.subtitle|default('subtitle')}}</p>
+                    <h2 class="display-3 mb-5">{{block.title|default('title')}}</h2>
+                    {% if block.button_title is not empty %}
+                        <a href="{{absolute_link(block.button_link|e)}}" class="button button-border border-color m-0 color h-bg-color h-text-light">{{block.button_title}}</a>
+                    {% endif %}
+                </div>
+
+                {% for shop in block.shops %}
+                    <div class="col-md-4">
+                        <div class="overflow-hidden position-relative dark parallax scroll-detect" data-class="up-lg:min-h-700 down-lg:min-h-400">
+                            <div>
+                                <img src="{{shop.image|thumbnail(604,900,fit='crop')}}" alt="..." class="parallax-bg">
+                            </div>
+                            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-end justify-content-between px-5 py-6">
+                                <div style="text-shadow: 2px 2px 3px rgba(0,0,0);">
+                                    <p class="text-uppercase ls-3 small mb-2 op-07" style="background: rgba(0,0,0);">{{shop.subtitle}}</p>
+                                    <h3 class="display-6 fw-lighter mb-0">{{shop.title}}</h3>
+                                </div>
+
+                                <a href="{{absolute_link(shop.button_link|e)}}" class="ps-2 text-white fs-1 bi-arrow-right-circle-fill h-translate-x-n-sm transform-ts"></a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+{% endif %}
