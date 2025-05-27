@@ -29,17 +29,17 @@ fields:
       attr:
         placeholder: Su correo...
       constraints: [NotBlank, Email]
-  needhelp:
-    type: choice
-    options:
-      required: true
-      label: En qué necesita asistencia?
-      choices:
-        {
-          "Ventas": "sales",
-          "Franquicias": "franchises",
-          "Distribuciones": "distributions",
-        }
+  # needhelp:
+  #   type: choice
+  #   options:
+  #     required: true
+  #     label: En qué necesita asistencia?
+  #     choices:
+  #       {
+  #         "Ventas": "sales",
+  #         "Franquicias": "franchises",
+  #         "Distribuciones": "distributions",
+  #       }
   details:
     type: textarea
     options:

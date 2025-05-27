@@ -10,7 +10,7 @@ feedback:
   error: There are errors in the form. Please fix them, before trying to resubmit
 database:
   contenttype:
-    name: quotations # save all form submissions to the quotations contenttype
+    name: baristas # save all form submissions to the quotations contenttype
     ignore_missing: true # ignore fields in the form that aren't defined in the ContentType
 fields:
   name:
@@ -29,17 +29,17 @@ fields:
       attr:
         placeholder: Su correo...
       constraints: [NotBlank, Email]
-  needhelp:
-    type: choice
-    options:
-      required: true
-      label: En qué necesita asistencia?
-      choices:
-        {
-          "Ventas": "sales",
-          "Franquicias": "franchises",
-          "Distribuciones": "distributions",
-        }
+  # needhelp:
+  #   type: choice
+  #   options:
+  #     required: true
+  #     label: En qué necesita asistencia?
+  #     choices:
+  #       {
+  #         "Ventas": "sales",
+  #         "Franquicias": "franchises",
+  #         "Distribuciones": "distributions",
+  #       }
   details:
     type: textarea
     options:

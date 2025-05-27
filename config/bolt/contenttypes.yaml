@@ -703,10 +703,10 @@ quotations:
             type: text
             variant: inline
             readonly: true
-        needhelp:
-            type: text
-            variant: inline
-            readonly: true
+        # needhelp:
+            # type: text
+            # variant: inline
+            # readonly: true
         details:
             type: textarea
             readonly: true
@@ -748,10 +748,10 @@ baristas:
             type: text
             variant: inline
             readonly: true
-        needhelp:
-            type: text
-            variant: inline
-            readonly: true
+        # needhelp:
+        #     type: text
+        #     variant: inline
+        #     readonly: true
         details:
             type: textarea
             readonly: true
