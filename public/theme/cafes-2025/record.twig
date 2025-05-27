@@ -11,13 +11,13 @@
         {% include 'partials/_header.twig' with {block: settings} %}
     {% endif %}
 
-    <div class="container">
+    <div class="container py-5">
         <div id="content">
             <div
-                class="content-wrap py-5">
+                class="content-wrap py-0 d-flex flex-column justify-content-center align-items-center">
 
                 <!-- Record Content-->
-                <article class="article py-0">
+                <article class="article col-12 col-lg-8" style="text-align: justify; text-justify: inter-word;">
                     <h1>{{ record|title }}</h1>
 
                     {% with {'record': record} %}
