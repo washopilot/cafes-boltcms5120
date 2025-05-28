@@ -33,7 +33,7 @@
                 </div>
 
 
-                <div class="col-lg-3 col-6 offset-md-2">
+                <div class="col-lg-3 col-12 offset-md-2">
 
                     <div class="widget widget_links">
 
@@ -55,7 +55,7 @@
 
                 </div>
 
-                <div class="col-lg-3 col-6">
+                <div class="col-lg-3 col-12">
 
                     <div class="widget widget_links">
 
@@ -64,7 +64,7 @@
                         <ul>
                             {% for social in block.sociales %}
                                 <li class="mb-2">
-                                    <a class="ls-1 text-light" target="_blank" href="{{absolute_link(social.contentlink|e)}}">{{social.title|capitalize}}</a>
+                                    <a class="fa-brands fa-{{social.title}} text-light" target="_blank" href="{{absolute_link(social.contentlink|e)}}">&nbsp;&nbsp;{{social.title|capitalize}}</a>
                                 </li>
                             {% endfor %}
                         </ul>
