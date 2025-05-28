@@ -47,6 +47,11 @@ fields:
       label: Descripción
       attr:
         placeholder: Por favor describa su necesidad…
+  my_hcaptcha:
+    type: captcha
+    options:
+      captcha_type: hcaptcha
+      label: "Por favor complete este CAPTCHA"
   submit:
     type: submit
     options:

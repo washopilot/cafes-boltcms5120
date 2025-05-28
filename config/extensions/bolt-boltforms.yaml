@@ -67,11 +67,11 @@ layout:
 # * `public_key` key will be labeled "Site key" within the Site configuration
 # * `private_key` key will be labeled "Secret key" within the Settings tab
 #
-#hcaptcha:
-#    enabled: false
-#    public_key: ''
-#    private_key: ''
-#    theme: light|dark
+hcaptcha:
+   enabled: true
+   public_key: '%env(HCAPTCHA_SITE_KEY)%'
+   private_key: '%env(HCAPTCHA_SECRET_KEY)%'
+   theme: light
 
 ## File Uploads
 #
