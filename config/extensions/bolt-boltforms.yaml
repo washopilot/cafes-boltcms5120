@@ -69,8 +69,8 @@ layout:
 #
 hcaptcha:
    enabled: true
-   public_key: '%env(HCAPTCHA_SITE_KEY)%'
-   private_key: '%env(HCAPTCHA_SECRET_KEY)%'
+   public_key: '93a81038-d86e-4236-bfaa-7782ba22285e'
+   private_key: 'ES_a33264ed4c4f4ea4a46a80a56287ef4f'
    theme: light
 
 ## File Uploads
