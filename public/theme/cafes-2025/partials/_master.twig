@@ -1,321 +1,521 @@
-{% block master_vars %} {# Empty by default #}
+{% block master_vars %}
+    {# Empty by default #}
 
-<!DOCTYPE html>
-<html dir="ltr" lang="en-US">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <meta http-equiv="x-ua-compatible" content="IE=edge">
-        <meta name="author" content="SemiColonWeb">
-        <meta
-        name="description" content="Create Skincare Store &amp; Beauty Products Websites with Canvas Template. Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today.">
+    <!DOCTYPE html>
+    <html dir="ltr" lang="en-US">
+        <head>
+            <meta http-equiv="content-type" content="text/html; charset=utf-8">
+            <meta http-equiv="x-ua-compatible" content="IE=edge">
+            <meta name="author" content="SemiColonWeb">
+            <meta
+            name="description" content="Create Skincare Store &amp; Beauty Products Websites with Canvas Template. Get Canvas to build powerful websites easily with the Highly Customizable &amp; Best Selling Bootstrap Template, today.">
 
-        <!-- Font Imports -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap">
-        <link
-        rel="stylesheet" href="https://use.typekit.net/aay8rzy.css">
+            <!-- Font Imports -->
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap">
+            <link
+            rel="stylesheet" href="https://use.typekit.net/aay8rzy.css">
 
-        <!-- Core Style -->
-        <link
-        rel="stylesheet" href="{{ asset('style.css') }}">
+            <!-- Core Style -->
+            <link
+            rel="stylesheet" href="{{ asset('style.css') }}">
 
-        <!-- Font Icons -->
-        <link
-        rel="stylesheet" href="{{ asset('css/font-icons.css') }}">
+            <!-- Font Icons -->
+            <link
+            rel="stylesheet" href="{{ asset('css/font-icons.css') }}">
 
-        <!-- Plugins/Components CSS -->
-        <link rel="stylesheet" href="{{ asset('demos/skincare/css/rs6.css') }}">
-        <link
-        rel="stylesheet" href="{{ asset('demos/skincare/scroll/scroll.css') }}">
-        {% if isListingProducts is defined %}
-        	<link rel="stylesheet" href="{{asset('css/swiper.css')}}">
-	        <link rel="stylesheet" href="{{asset('css/components/ion.rangeslider.css')}}">
-        {% endif %}
-        
-        <!-- Niche Demos -->
-        <link
-        rel="stylesheet" href="{{ asset('demos/skincare/skincare.css') }}">
+            <!-- Plugins/Components CSS -->
+            <link rel="stylesheet" href="{{ asset('demos/skincare/css/rs6.css') }}">
+            <link rel="stylesheet" href="{{ asset('demos/skincare/scroll/scroll.css') }}">
+            {% if isListingProducts is defined %}
+                <link rel="stylesheet" href="{{asset('css/swiper.css')}}">
+                <link rel="stylesheet" href="{{asset('css/components/ion.rangeslider.css')}}">
+            {% endif %}
 
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
-        <meta
-        name="viewport" content="width=device-width, initial-scale=1">
+            <!-- Niche Demos -->
+            <link
+            rel="stylesheet" href="{{ asset('demos/skincare/skincare.css') }}">
 
-        <!-- Document Title ============================================= -->
-        <title>
-            {%- if record|default and record.title -%}
-                {{- record.title ~ ' | ' -}}
-            {%- endif -%}
-            {{- config.get('general/sitename') -}}
-            {%- if record|default == null and config.has('general/payoff') -%}
-                {{- ' | ' ~ config.get('general/payoff') -}}
-            {%- endif -%}
-        </title>
-    </head>
+            <!-- Custom CSS -->
+            <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+            <meta
+            name="viewport" content="width=device-width, initial-scale=1">
 
-    <body
-        class="stretched">
-        <!-- Document Wrapper ============================================= -->
-        <div id="wrapper">
-            {% block main %}
-                {# ---- twig content here --- #}
-            {% endblock main %}
-        </div>
-        <!-- #wrapper end -->
+            <!-- Document Title ============================================= -->
+            <title>
+                {%- if record|default and record.title -%}
+                    {{- record.title ~ ' | ' -}}
+                {%- endif -%}
+                {{- config.get('general/sitename') -}}
+                {%- if record|default == null and config.has('general/payoff') -%}
+                    {{- ' | ' ~ config.get('general/payoff') -}}
+                {%- endif -%}
+            </title>
+        </head>
 
-        <!-- Go To Top
-        ============================================= -->
-        <div id="gotoTop" class="uil uil-angle-up"></div>
+        <body
+            class="stretched">
+            <!-- Document Wrapper ============================================= -->
+            <div id="wrapper">
+                {% block main %}
+                    {# ---- twig content here --- #}
+                {% endblock main %}
+            </div>
+            <!-- #wrapper end -->
 
-        <!-- JavaScripts
-        ============================================= -->
-        <script src="{{ asset('js/plugins.min.js') }}"></script>
-        <script src="{{ asset('js/functions.bundle.js') }}"></script>
-        <script src="{{ asset('js/smooth-scroll.js') }}"></script>
+            <!-- Go To Top
+            ============================================= -->
+            <div id="gotoTop" class="uil uil-angle-up"></div>
 
-        <!-- Revolution Slider
-        ============================================= -->
-        <script src="{{ asset('demos/skincare/js/rs/rbtools.min.js') }}"></script>
-        <script src="{{ asset('demos/skincare/js/rs/rs6.min.js') }}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+            <!-- JavaScripts
+            ============================================= -->
+            <script src="{{ asset('js/plugins.min.js') }}"></script>
+            <script src="{{ asset('js/functions.bundle.js') }}"></script>
+            <script src="{{ asset('js/smooth-scroll.js') }}"></script>
 
-        {% if isListingProducts is defined %}
-            <!-- Range Slider Plugin -->
-            <script src="{{asset('js/components/rangeslider.min.js')}}"></script>
-        {% endif %}
+            <!-- Revolution Slider
+            ============================================= -->
+            <script src="{{ asset('demos/skincare/js/rs/rbtools.min.js') }}"></script>
+            <script src="{{ asset('demos/skincare/js/rs/rs6.min.js') }}"></script>
+            <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
 
-        <script>
-            var tpj = jQuery;
-            if (window.RS_MODULES === undefined) 
-                window.RS_MODULES = {};
-            
+            {% if isListingProducts is defined %}
+                <!-- Range Slider Plugin -->
+                <script src="{{asset('js/components/rangeslider.min.js')}}"></script>
+            {% endif %}
 
-
-            if (RS_MODULES.modules === undefined) 
-                RS_MODULES.modules = {};
-            
+            <script>
+                var tpj = jQuery;
+                if (window.RS_MODULES === undefined) 
+                    window.RS_MODULES = {};
+                
 
 
-            RS_MODULES.modules["revslider401"] = {
-                once: RS_MODULES.modules["revslider401"] !== undefined ? RS_MODULES.modules["revslider401"].once : undefined,
-                init: function () {
-                    window.revapiShop = window.revapiShop === undefined || window.revapiShop === null || window.revapiShop.length === 0 ? document.getElementById("rev_slider_shop") : window.revapiShop;
-                    if (window.revapiShop === null || window.revapiShop === undefined || window.revapiShop.length == 0) {
-                        window.revapiShopinitTry = window.revapiShopinitTry === undefined ? 0 : window.revapiShopinitTry + 1;
-                        if (window.revapiShopinitTry < 20) 
-                            requestAnimationFrame(function () {
-                                RS_MODULES.modules["revslider401"].init()
-                            });
-                        
+                if (RS_MODULES.modules === undefined) 
+                    RS_MODULES.modules = {};
+                
 
 
-                        return;
-                    }
-                    window.revapiShop = jQuery(window.revapiShop);
-                    if (window.revapiShop.revolution == undefined) {
-                        revslider_showDoubleJqueryError("rev_slider_shop");
-                        return;
-                    }
-                    revapiShop.revolutionInit({
-                        revapi: "revapiShop",
-                        DPR: "dpr",
-                        sliderLayout: "fullscreen",
-                        duration: "7000ms",
-                        visibilityLevels: "1140,1024,778,480",
-                        gridwidth: "1240,1024,778,480",
-                        gridheight: "900,768,960,720",
-                        lazyType: "smart",
-                        perspective: 600,
-                        perspectiveType: "global",
-                        editorheight: "900,768,960,720",
-                        responsiveLevels: "1140,1024,778,480",
-                        stopAtSlide: 1,
-                        stopAfterLoops: 0,
-                        stopLoop: false,
-                        progressBar: {
-                            disableProgressBar: true
-                        },
-                        navigation: {
-                            onHoverStop: false
-                        },
-                        parallax: {
-                            levels: [
-                                5,
-                                10,
-                                15,
-                                20,
-                                25,
-                                30,
-                                35,
-                                40,
-                                45,
-                                46,
-                                47,
-                                48,
-                                49,
-                                50,
-                                51,
-                                30
-                            ],
-                            type: "scroll",
-                            origo: "slidercenter",
-                            speed: 0
-                        },
-                        viewPort: {
-                            global: false,
-                            globalDist: "0px",
-                            enable: true,
-                            visible_area: "0px"
-                        },
-                        fallbacks: {
-                            allowHTML5AutoPlayOnAndroid: true
+                RS_MODULES.modules["revslider401"] = {
+                    once: RS_MODULES.modules["revslider401"] !== undefined ? RS_MODULES.modules["revslider401"].once : undefined,
+                    init: function () {
+                        window.revapiShop = window.revapiShop === undefined || window.revapiShop === null || window.revapiShop.length === 0 ? document.getElementById("rev_slider_shop") : window.revapiShop;
+                        if (window.revapiShop === null || window.revapiShop === undefined || window.revapiShop.length == 0) {
+                            window.revapiShopinitTry = window.revapiShopinitTry === undefined ? 0 : window.revapiShopinitTry + 1;
+                            if (window.revapiShopinitTry < 20) 
+                                requestAnimationFrame(function () {
+                                    RS_MODULES.modules["revslider401"].init()
+                                });
+                            
+
+
+                            return;
                         }
-                    });
-
-                }
-            }; // End of RevInitScript
-
-            var circleType = new CircleType(document.getElementById("rotated-text")).radius(86);
-
-        </script>
-
-        {% if isListingProducts is defined and price_range_from is defined and price_range_to is defined %}
-        <script>
-            jQuery(".button-filter").click(function(){
-                jQuery(".skincare-filter").toggleClass("skincare-filter-hide");
-                jQuery(this).toggleClass("button-filter-active-hide");
-                SEMICOLON.Modules.gridInit();
-            });
-
-            var priceRangefrom = 0,
-                priceRangeto = 0,
-                $container = jQuery('#shop');
-
-            jQuery(window).on( 'load', function(){
-
-                jQuery(window).resize(function() {
-                    $container.isotope('layout');
-                });
-
-            });
-
-            jQuery(document).ready( function($){
-                var $priceRange = jQuery(".price-range"),
-                    $priceInputFrom = jQuery(".price-range-from"),
-                    $priceInputTo = jQuery(".price-range-to"),
-                    min = {{price_range_from}},
-                    max = {{price_range_to}},
-                    prefix = '$ ';
-
-                $priceRange.ionRangeSlider({
-                    skin: "round",
-                    type: "double",
-                    min: min,
-                    max: max,
-                    from: min,
-                    to: max,
-                    prefix: prefix,
-                    hide_min_max: true,
-                    hide_from_to: true,
-                    onStart: function(data) {
-                        priceRangefrom = data.from;
-                        priceRangeto = data.to;
-                        updateInputs(data);
-                    },
-                    onChange: updateInputs,
-                    onFinish: function (data) {
-                        priceRangefrom = data.from;
-                        priceRangeto = data.to;
-
-                        $container.isotope({
-                            filter: function() {
-                                if( jQuery(this).find('.product-price').find('ins').length > 0 ) {
-                                    var price = jQuery(this).find('.product-price ins').text();
-                                } else {
-                                    var price = jQuery(this).find('.product-price').text();
-                                }
-
-                                priceNum = price.split("$");
-
-                                return ( priceRangefrom <= priceNum[1] && priceRangeto >= priceNum[1] );
+                        window.revapiShop = jQuery(window.revapiShop);
+                        if (window.revapiShop.revolution == undefined) {
+                            revslider_showDoubleJqueryError("rev_slider_shop");
+                            return;
+                        }
+                        revapiShop.revolutionInit({
+                            revapi: "revapiShop",
+                            DPR: "dpr",
+                            sliderLayout: "fullscreen",
+                            duration: "7000ms",
+                            visibilityLevels: "1140,1024,778,480",
+                            gridwidth: "1240,1024,778,480",
+                            gridheight: "900,768,960,720",
+                            lazyType: "smart",
+                            perspective: 600,
+                            perspectiveType: "global",
+                            editorheight: "900,768,960,720",
+                            responsiveLevels: "1140,1024,778,480",
+                            stopAtSlide: 1,
+                            stopAfterLoops: 0,
+                            stopLoop: false,
+                            progressBar: {
+                                disableProgressBar: true
+                            },
+                            navigation: {
+                                onHoverStop: false
+                            },
+                            parallax: {
+                                levels: [
+                                    5,
+                                    10,
+                                    15,
+                                    20,
+                                    25,
+                                    30,
+                                    35,
+                                    40,
+                                    45,
+                                    46,
+                                    47,
+                                    48,
+                                    49,
+                                    50,
+                                    51,
+                                    30
+                                ],
+                                type: "scroll",
+                                origo: "slidercenter",
+                                speed: 0
+                            },
+                            viewPort: {
+                                global: false,
+                                globalDist: "0px",
+                                enable: true,
+                                visible_area: "0px"
+                            },
+                            fallbacks: {
+                                allowHTML5AutoPlayOnAndroid: true
                             }
                         });
+
                     }
-                });
+                }; // End of RevInitScript
 
-                function updateInputs (data) {
-                    from = data.from;
-                    to = data.to;
+                var circleType = new CircleType(document.getElementById("rotated-text")).radius(86);
+            </script>
 
-                    $priceInputFrom.text(prefix + from);
-                    $priceInputTo.text(prefix + to);
-                }
+            {% if isListingProducts is defined and price_range_from is defined and price_range_to is defined %}
+                <script>
+                    jQuery(".button-filter").click(function () {
+                        jQuery(".skincare-filter").toggleClass("skincare-filter-hide");
+                        jQuery(this).toggleClass("button-filter-active-hide");
+                        SEMICOLON.Modules.gridInit();
+                    });
 
-                jQuery(".dropdown-item span").on( 'click', function(){
-                    var displayText = jQuery(this).text();
-                    jQuery("#shop-filter-btn").html(displayText);
-                    jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
-                });
-            });
+                    var priceRangefrom = 0,
+                        priceRangeto = 0,
+                        $container = jQuery('#shop');
 
-            jQuery(window).on( 'load', function(){
-                jQuery('.shop-filter').find('li:not(.custom-filter-reset)').each( function(){
-                    var element = jQuery(this),
-                        elementFilter = element.children().attr('data-filter'),
-                        elementFilterContainer = element.parents('.custom-filter').attr('data-container');
+                    jQuery(window).on('load', function () {
 
-                    elementFilterCount = Number( jQuery(elementFilterContainer).find( '.product' ).filter( elementFilter ).length );
+                        jQuery(window).resize(function () {
+                            $container.isotope('layout');
+                        });
 
-                    element.find('.shop-filter-count').text(elementFilterCount);
+                    });
 
-                });
+                    jQuery(document).ready(function ($) {
+                        var $priceRange = jQuery(".price-range"),
+                            $priceInputFrom = jQuery(".price-range-from"),
+                            $priceInputTo = jQuery(".price-range-to"),
+                            min = {{ price_range_from }},
+                            max = {{ price_range_to }},
+                            prefix = '$ ';
 
-                jQuery('#shop').isotope({
-                    getSortData: {
-                        name_az: '.product-title',
-                        name_za: '.product-title',
-                        price_lh: function( itemElem ) {
-                            if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
-                                var price = jQuery(itemElem).find('.product-price ins').text();
-                            } else {
-                                var price = jQuery(itemElem).find('.product-price').text();
+                        $priceRange.ionRangeSlider({
+                            skin: "round",
+                            type: "double",
+                            min: min,
+                            max: max,
+                            from: min,
+                            to: max,
+                            prefix: prefix,
+                            hide_min_max: true,
+                            hide_from_to: true,
+                            onStart: function (data) {
+                                priceRangefrom = data.from;
+                                priceRangeto = data.to;
+                                updateInputs(data);
+                            },
+                            onChange: updateInputs,
+                            onFinish: function (data) {
+                                priceRangefrom = data.from;
+                                priceRangeto = data.to;
+
+                                $container.isotope({
+                                    filter: function () {
+                                        if (jQuery(this).find('.product-price').find('ins').length > 0) {
+                                            var price = jQuery(this).find('.product-price ins').text();
+                                        } else {
+                                            var price = jQuery(this).find('.product-price').text();
+                                        }
+
+                                        priceNum = price.split("$");
+
+                                        return(priceRangefrom <= priceNum[1] && priceRangeto >= priceNum[1]);
+                                    }
+                                });
                             }
+                        });
 
-                            priceNum = price.split("$");
+                        function updateInputs(data) {
+                            from = data.from;
+                            to = data.to;
 
-                            return parseFloat( priceNum[1] );
-                        },
-                        price_hl: function( itemElem ) {
-                            if( jQuery(itemElem).find('.product-price').find('ins').length > 0 ) {
-                                var price = jQuery(itemElem).find('.product-price ins').text();
-                            } else {
-                                var price = jQuery(itemElem).find('.product-price').text();
-                            }
-
-                            priceNum = price.split("$");
-
-                            return parseFloat( priceNum[1] );
+                            $priceInputFrom.text(prefix + from);
+                            $priceInputTo.text(prefix + to);
                         }
-                    },
-                    sortAscending: {
-                        name_az: true,
-                        name_za: false,
-                        price_lh: true,
-                        price_hl: false
+
+                        jQuery(".dropdown-item span").on('click', function () {
+                            var displayText = jQuery(this).text();
+                            jQuery("#shop-filter-btn").html(displayText);
+                            jQuery(this).parents('.dropdown').find('.show').toggleClass('show', false);
+                        });
+                    });
+
+                    jQuery(window).on('load', function () {
+                        jQuery('.shop-filter').find('li:not(.custom-filter-reset)').each(function () {
+                            var element = jQuery(this),
+                                elementFilter = element.children().attr('data-filter'),
+                                elementFilterContainer = element.parents('.custom-filter').attr('data-container');
+
+                            elementFilterCount = Number(jQuery(elementFilterContainer).find('.product').filter(elementFilter).length);
+
+                            element.find('.shop-filter-count').text(elementFilterCount);
+
+                        });
+
+                        jQuery('#shop').isotope({
+                            getSortData: {
+                                name_az: '.product-title',
+                                name_za: '.product-title',
+                                price_lh: function (itemElem) {
+                                    if (jQuery(itemElem).find('.product-price').find('ins').length > 0) {
+                                        var price = jQuery(itemElem).find('.product-price ins').text();
+                                    } else {
+                                        var price = jQuery(itemElem).find('.product-price').text();
+                                    }
+
+                                    priceNum = price.split("$");
+
+                                    return parseFloat(priceNum[1]);
+                                },
+                                price_hl: function (itemElem) {
+                                    if (jQuery(itemElem).find('.product-price').find('ins').length > 0) {
+                                        var price = jQuery(itemElem).find('.product-price ins').text();
+                                    } else {
+                                        var price = jQuery(itemElem).find('.product-price').text();
+                                    }
+
+                                    priceNum = price.split("$");
+
+                                    return parseFloat(priceNum[1]);
+                                }
+                            },
+                            sortAscending: {
+                                name_az: true,
+                                name_za: false,
+                                price_lh: true,
+                                price_hl: false
+                            }
+                        });
+
+                        jQuery(document).on('click', '.shop-sorting li a', function (e) {
+                            e.preventDefault();
+                            var $li = jQuery(this).parent();
+                            $li.siblings().removeClass('active-filter');
+                            $li.addClass('active-filter');
+                            var sortByValue = jQuery(this).attr('data-sort-by');
+                            jQuery('#shop').isotope({sortBy: sortByValue});
+                        });
+                    });
+                </script>
+            {% endif %}
+
+            {% if isRecord is defined %}
+                <div class="toast-container" id="toastContainer"></div>
+
+                <script>
+                    class ImageShareManager {
+                        constructor() {
+                            this.baseUrl = 'https://cafesdeloja.com';
+                            this.init();
+                        }
+
+                        init() { // Esperar a que el DOM esté completamente cargado
+                            if (document.readyState === 'loading') {
+                                document.addEventListener('DOMContentLoaded', () => this.processImages());
+                            } else {
+                                this.processImages();
+                            }
+                        }
+
+                        processImages() { // Encontrar SOLO las imágenes dentro del article específico
+                            const article = document.querySelector('article.article.col-12.col-lg-8');
+                            if (! article) {
+                                console.log('No se encontró el article con las clases específicas');
+                                return;
+                            }
+
+                            const images = article.querySelectorAll('img');
+                            console.log(`Procesando ${
+                                images.length
+                            } imágenes dentro del article`);
+
+                            images.forEach((img, index) => {
+                                console.log(`Procesando imagen ${
+                                    index + 1
+                                }: ${
+                                    img.src
+                                }`);
+                                this.addShareButton(img);
+                            });
+                        }
+
+                        addShareButton(img) { // Crear contenedor para la imagen si no existe
+                            if (img.parentElement.classList.contains('image-container')) 
+                                return;
+                            
+
+
+                            const container = document.createElement('div');
+                            container.className = 'image-container';
+
+                            // Insertar el contenedor antes de la imagen
+                            img.parentNode.insertBefore(container, img);
+                            container.appendChild(img);
+
+                            // Crear botón de compartir
+                            const shareBtn = document.createElement('button');
+                            shareBtn.className = 'share-btn';
+                            shareBtn.innerHTML = '<i class="fas fa-share-alt"></i>';
+                            shareBtn.setAttribute('aria-label', 'Compartir imagen');
+                            shareBtn.title = 'Compartir esta imagen';
+
+                            // Agregar event listener
+                            shareBtn.addEventListener('click', (e) => {
+                                e.preventDefault();
+                                this.shareImage(img, shareBtn);
+                            });
+
+                            container.appendChild(shareBtn);
+                        }
+
+                        async shareImage(img, button) {
+                            try { // Obtener información de la imagen
+                                const imageUrl = this.getFullImageUrl(img.src);
+                                const imageTitle = img.alt || 'Imagen de Cafés de Loja';
+                                const pageUrl = window.location.href;
+
+                                // Datos para compartir
+                                const shareData = {
+                                    title: imageTitle,
+                                    text: `¡Mira esta imagen de Cafés de Loja!`,
+                                    url: imageUrl
+                                };
+
+                                // Verificar si Web Share API está disponible y es móvil
+                                if (navigator.share && this.canShare(shareData)) {
+                                    console.log('Usando Web Share API (móvil)');
+                                    await navigator.share(shareData);
+                                    this.showSuccessAnimation(button);
+                                    this.showNotification('¡Imagen compartida exitosamente!', 'success');
+                                } else { // Fallback: copiar al portapapeles
+                                    console.log('Usando fallback (desktop)');
+                                    await this.fallbackShare(imageUrl, imageTitle);
+                                    this.showSuccessAnimation(button);
+                                    this.showNotification('Enlace copiado al portapapeles', 'info');
+                                }
+                            } catch (error) {
+                                console.error('Error al compartir:', error);
+
+                                if (error.name === 'AbortError') { // Usuario canceló el compartir
+                                    this.showNotification('Compartir cancelado', 'info');
+                                    return;
+                                }
+
+                                // Intentar fallback
+                                try {
+                                    const imageUrl = this.getFullImageUrl(img.src);
+                                    await this.fallbackShare(imageUrl, img.alt || 'Imagen');
+                                    this.showNotification('Enlace copiado al portapapeles', 'info');
+                                } catch (fallbackError) {
+                                    this.showNotification('No se pudo compartir la imagen', 'error');
+                                }
+                            }
+                        }
+
+                        getFullImageUrl(src) { // Si la URL ya es absoluta, devolverla tal como está
+                            if (src.startsWith('http://') || src.startsWith('https://')) {
+                                return src;
+                            }
+
+                            // Si es una URL relativa, construir la URL completa
+                            if (src.startsWith('/')) {
+                                return this.baseUrl + src;
+                            } else {
+                                return this.baseUrl + '/' + src;
+                            }
+                        }
+
+                        canShare(data) {
+                            try {
+                                return navigator.canShare ? navigator.canShare(data) : true;
+                            } catch (error) {
+                                return false;
+                            }
+                        }
+
+                        async fallbackShare(url, title) { // Intentar copiar al portapapeles
+                            if (navigator.clipboard && navigator.clipboard.writeText) {
+                                await navigator.clipboard.writeText(url);
+                            } else { // Fallback más antiguo
+                                const textArea = document.createElement('textarea');
+                                textArea.value = url;
+                                textArea.style.position = 'fixed';
+                                textArea.style.opacity = '0';
+                                document.body.appendChild(textArea);
+                                textArea.focus();
+                                textArea.select();
+
+                                try {
+                                    document.execCommand('copy');
+                                } finally {
+                                    document.body.removeChild(textArea);
+                                }
+                            }
+                        }
+
+                        showSuccessAnimation(button) {
+                            button.classList.add('share-success');
+                            setTimeout(() => {
+                                button.classList.remove('share-success');
+                            }, 300);
+                        }
+
+                        showNotification(message, type = 'info') {
+                            const container = document.getElementById('toastContainer');
+                            const toast = document.createElement('div');
+                            toast.className = 'custom-toast';
+
+                            const icon = type === 'success' ? 'fas fa-check-circle' : type === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-info-circle';
+
+                            toast.innerHTML = `
+                    <i class="${icon}" style="margin-right: 8px;"></i>
+                    ${message}
+                `;
+
+                            container.appendChild(toast);
+
+                            // Mostrar toast
+                            setTimeout(() => toast.classList.add('show'), 100);
+
+                            // Ocultar y remover toast
+                            setTimeout(() => {
+                                toast.classList.remove('show');
+                                setTimeout(() => {
+                                    if (container.contains(toast)) {
+                                        container.removeChild(toast);
+                                    }
+                                }, 300);
+                            }, 3000);
+                        }
                     }
-                });
 
-                jQuery(document).on('click', '.shop-sorting li a', function(e) {
-                    e.preventDefault();
-                    var $li = jQuery(this).parent();
-                    $li.siblings().removeClass('active-filter');
-                    $li.addClass('active-filter');
-                    var sortByValue = jQuery(this).attr('data-sort-by');
-                    jQuery('#shop').isotope({ sortBy: sortByValue });
-                });
-            });
-        </script>
-        {% endif %}
+                    // Inicializar el gestor de compartir imágenes
+                    const imageShareManager = new ImageShareManager();
 
-    </body>
-</html>
+                    // Para desarrollo: también reinicializar si se agrega contenido dinámicamente
+                    window.reinitializeImageSharing = () => {
+                        imageShareManager.processImages();
+                    };
+                </script>
+            {% endif %}
+
+        </body>
+
+    </html>
 {% endblock %}

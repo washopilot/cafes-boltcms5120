@@ -1,6 +1,12 @@
 {% extends 'partials/_master.twig' %}
 {% setcontent settings = 'settings' returnsingle %}
 
+{% block master_vars %}
+    {# Variables accessible in _master.twig #}
+    {% set isRecord = true %}
+    {{ parent() }}
+    {# Preserve any existing vars #}
+{% endblock %}
 
 {% block main %}
     {% if settings is not null %}
