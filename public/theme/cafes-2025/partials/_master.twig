@@ -1,3 +1,5 @@
+{% setcontent settings = 'settings' returnsingle %}
+
 {% block master_vars %}
     {# Empty by default #}
 
@@ -7,8 +9,29 @@
             <meta http-equiv="content-type" content="text/html; charset=utf-8">
             <meta http-equiv="x-ua-compatible" content="IE=edge">
             <meta name="author" content="jlgranda.com">
-            <meta
-            name="description" content="Café de especialidad y listo para llevar, somos ¡El impulso de los lojanos!">
+
+            <!-- SEO  -->
+            <meta name="description" content="{{settings.meta_description}}">
+            <meta name="keywords" content="{{settings.meta_keywords}}">
+            <meta property="og:title" content="{{settings.og_title}}"/>
+            <meta property="og:description" content="{{settings.og_description}}"/>
+            <meta property="og:url" content="{{settings.og_url}}"/>
+            <meta property="og:site_name" content="{{settings.site_name}}"/>
+            <meta property="og:locale" content="{{settings.og_locale}}"/>
+            <meta property="og:image" content="{{absolute_url(settings.og_twitter_image|thumbnail(1200,630,fit='contain'))}}"/>
+            <meta property="og:image:width" content="1200"/>
+            <meta property="og:image:height" content="630"/>
+            <meta property="og:image:alt" content="logocard"/>
+            <meta property="og:type" content="website"/>
+            <meta name="twitter:card" content="summary_large_image"/>
+            <meta name="twitter:creator" content="{{settings.twitter_creator}}"/>
+            <meta name="twitter:title" content="{{settings.twitter_title}}"/>
+            <meta name="twitter:description" content="{{settings.twitter_description}}"/>
+            <meta name="twitter:image" content="{{absolute_url(settings.og_twitter_image|thumbnail(1200,630,fit='contain'))}}"/>
+            <meta name="twitter:image:width" content="1200"/>
+            <meta name="twitter:image:height" content="630"/>
+            <meta name="twitter:image:alt" content="logocard"/>
+            <link rel="icon" href="{{settings.favicon|thumbnail(200,196,fit='contain')}}" type="image/x-icon" sizes="200x196"/>
 
             <!-- Font Imports -->
             <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap">

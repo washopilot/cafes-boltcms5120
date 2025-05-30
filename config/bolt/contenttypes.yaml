@@ -704,9 +704,9 @@ quotations:
             variant: inline
             readonly: true
         # needhelp:
-            # type: text
-            # variant: inline
-            # readonly: true
+        # type: text
+        # variant: inline
+        # readonly: true
         details:
             type: textarea
             readonly: true
@@ -935,6 +935,62 @@ settings:
             variant: inline
             mode: float
             default: 139.99
+        meta_description:
+            type: text
+            variant: inline
+            label: meta_description
+            group: SEO
+        meta_keywords:
+            type: text
+            variant: inline
+            label: meta_keywords
+        og_title:
+            type: text
+            variant: inline
+            label: og_title
+        og_description:
+            type: text
+            variant: inline
+            label: og_description
+        og_url:
+            type: text
+            variant: inline
+            label: og_url
+        og_site_name:
+            type: text
+            variant: inline
+            label: og_site_name
+        og_locale:
+            type: text
+            variant: inline
+            label: og_locale
+        twitter_creator:
+            type: text
+            variant: inline
+            label: twitter_creator
+        twitter_title:
+            type: text
+            variant: inline
+            label: twitter_title
+        twitter_description:
+            type: text
+            variant: inline
+            label: twitter_description
+        og_twitter_image:
+            type: image
+            variant: inline
+            extensions: [jpg]
+            alt: false
+            label: og_twitter_image
+            postfix: |
+                La imagen debe subirse SOLO en jpg y DEBE mantener una relación de 1200x630 px
+        favicon:
+            type: image
+            variant: inline
+            extensions: [png]
+            alt: false
+            postfix: |
+                Usar una imagen png con transparencia
     viewless: true
     singleton: true
     show_on_dashboard: false
