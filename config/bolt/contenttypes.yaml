@@ -748,6 +748,10 @@ baristas:
             type: text
             variant: inline
             readonly: true
+        phone:
+            type: text
+            variant: inline
+            readonly: true
         # needhelp:
         #     type: text
         #     variant: inline

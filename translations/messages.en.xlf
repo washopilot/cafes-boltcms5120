@@ -1,114 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:2.0" version="2.0" srcLang="en" trgLang="en">
   <file id="messages.en">
-    <unit id="3NHVIj9" name="Name">
-      <segment>
-        <source>Name</source>
-        <target>Name</target>
-      </segment>
-    </unit>
-    <unit id="rMKsKxN" name="Your name...">
-      <segment>
-        <source>Your name...</source>
-        <target>Your name...</target>
-      </segment>
-    </unit>
-    <unit id="8kiP1O9" name="Email address">
-      <segment>
-        <source>Email address</source>
-        <target>Email address</target>
-      </segment>
-    </unit>
-    <unit id="TMY52.l" name="Your email...">
-      <segment>
-        <source>Your email...</source>
-        <target>Your email...</target>
-      </segment>
-    </unit>
-    <unit id="egV72Za" name="Your message">
-      <segment>
-        <source>Your message</source>
-        <target>Your message</target>
-      </segment>
-    </unit>
-    <unit id="gvYWw0o" name="Your message...">
-      <segment>
-        <source>Your message...</source>
-        <target>Your message...</target>
-      </segment>
-    </unit>
-    <unit id="2Iib8ls" name="Do you want us to contact you back?">
-      <segment>
-        <source>Do you want us to contact you back?</source>
-        <target>Do you want us to contact you back?</target>
-      </segment>
-    </unit>
-    <unit id="haOas0X" name="Yes">
-      <segment>
-        <source>Yes</source>
-        <target>Yes</target>
-      </segment>
-    </unit>
-    <unit id="HqRCoTS" name="No">
-      <segment>
-        <source>No</source>
-        <target>No</target>
-      </segment>
-    </unit>
-    <unit id="_.3xzA_" name="Submit my message »">
-      <segment>
-        <source>Submit my message »</source>
-        <target>Submit my message »</target>
-      </segment>
-    </unit>
-    <unit id=".MeoEev" name="String city processor string">
-      <segment>
-        <source>String city processor string</source>
-        <target>String city processor string</target>
-      </segment>
-    </unit>
-    <unit id="etX.1tL" name="What project do you need help with?">
-      <segment>
-        <source>What project do you need help with?</source>
-        <target>What project do you need help with?</target>
-      </segment>
-    </unit>
-    <unit id="rHh4URl" name="Web development">
-      <segment>
-        <source>Web development</source>
-        <target>Web development</target>
-      </segment>
-    </unit>
-    <unit id="41VobUL" name="Mobile development">
-      <segment>
-        <source>Mobile development</source>
-        <target>Mobile development</target>
-      </segment>
-    </unit>
-    <unit id="9ZBM96E" name="Marketing">
-      <segment>
-        <source>Marketing</source>
-        <target>Marketing</target>
-      </segment>
-    </unit>
-    <unit id="Um4Ah8w" name="Description">
-      <segment>
-        <source>Description</source>
-        <target>Description</target>
-      </segment>
-    </unit>
-    <unit id="xuEVbLW" name="Please describe your desired website or app…">
-      <segment>
-        <source>Please describe your desired website or app…</source>
-        <target>Please describe your desired website or app…</target>
-      </segment>
-    </unit>
-    <unit id="fLQ8I7G" name="Request quotation »">
-      <segment>
-        <source>Request quotation »</source>
-        <target>Request quotation »</target>
-      </segment>
-    </unit>
     <unit id="ViuxV1e" name="Nombre">
       <segment>
         <source>Nombre</source>
@@ -133,30 +25,6 @@
         <target>Su correo...</target>
       </segment>
     </unit>
-    <unit id="0mWb37D" name="En qué necesita asistencia?">
-      <segment>
-        <source>En qué necesita asistencia?</source>
-        <target>En qué necesita asistencia?</target>
-      </segment>
-    </unit>
-    <unit id="CmgNCGv" name="Ventas">
-      <segment>
-        <source>Ventas</source>
-        <target>Ventas</target>
-      </segment>
-    </unit>
-    <unit id="ZGsrOBb" name="Franquicias">
-      <segment>
-        <source>Franquicias</source>
-        <target>Franquicias</target>
-      </segment>
-    </unit>
-    <unit id="dKqI_IC" name="Distribuciones">
-      <segment>
-        <source>Distribuciones</source>
-        <target>Distribuciones</target>
-      </segment>
-    </unit>
     <unit id="7gC5b.8" name="Descripción">
       <segment>
         <source>Descripción</source>
@@ -169,10 +37,10 @@
         <target>Por favor describa su necesidad…</target>
       </segment>
     </unit>
-    <unit id="44sw47e" name="Enviar solicitud »">
+    <unit id="rn7brIs" name="Por favor complete este CAPTCHA">
       <segment>
-        <source>Enviar solicitud »</source>
-        <target>Enviar solicitud »</target>
+        <source>Por favor complete este CAPTCHA</source>
+        <target>Por favor complete este CAPTCHA</target>
       </segment>
     </unit>
     <unit id="PIZa9Ll" name="Enviar su solicitud »">
@@ -181,10 +49,22 @@
         <target>Enviar su solicitud »</target>
       </segment>
     </unit>
-    <unit id="rn7brIs" name="Por favor complete este CAPTCHA">
+    <unit id="VqaTZFz" name="Telephone approve number">
       <segment>
-        <source>Por favor complete este CAPTCHA</source>
-        <target>Por favor complete este CAPTCHA</target>
+        <source>Telephone approve number</source>
+        <target>Telephone approve number</target>
+      </segment>
+    </unit>
+    <unit id="8RhqvQu" name="Teléfono">
+      <segment>
+        <source>Teléfono</source>
+        <target>Teléfono</target>
+      </segment>
+    </unit>
+    <unit id="zEA6PXu" name="Su número de teléfono...">
+      <segment>
+        <source>Su número de teléfono...</source>
+        <target>Su número de teléfono...</target>
       </segment>
     </unit>
   </file>

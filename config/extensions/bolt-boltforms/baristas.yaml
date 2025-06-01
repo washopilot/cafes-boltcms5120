@@ -29,6 +29,14 @@ fields:
       attr:
         placeholder: Su correo...
       constraints: [NotBlank, Email]
+  phone:
+    type: text
+    options:
+      required: true
+      label: Teléfono
+      attr:
+        placeholder: Su número de teléfono...
+      constraints: [NotBlank, { Length: { "min": 10, "max": 10 } }]
   # needhelp:
   #   type: choice
   #   options:
