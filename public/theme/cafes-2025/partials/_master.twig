@@ -381,8 +381,8 @@
                                             ];
                                             
                                             await navigator.share({
-                                                title: 'Compartir imagen',
-                                                text: 'Mira esta imagen',
+                                                title: '{{ settings.share_title }}',
+                                                text: '{{ settings.share_text }}',
                                                 files: filesArray
                                             });
                                             console.log('Imagen compartida como archivo');
