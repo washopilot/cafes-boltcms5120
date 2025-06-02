@@ -352,7 +352,7 @@
                             // Crear botón de compartir
                             const shareBtn = document.createElement('button');
                             shareBtn.className = 'share-btn';
-                            shareBtn.innerHTML = '<i class="uil uil-share-alt"></i>';
+                            shareBtn.innerHTML = '<i class="uil uil-share-alt">{{ settings.share_button }}</i>';
                             
                             // Insertar después de la imagen
                             img.parentNode.insertBefore(shareBtn, img.nextSibling);
@@ -390,8 +390,8 @@
                                             console.warn('Error compartiendo como archivo:', e);
                                             // Fallback a compartir URL
                                             await navigator.share({
-                                                title: 'Compartir imagen',
-                                                text: 'Mira esta imagen',
+                                                title: '{{ settings.share_title }}',
+                                                text: '{{ settings.share_text }}',
                                                 url: img.src
                                             });
                                         }

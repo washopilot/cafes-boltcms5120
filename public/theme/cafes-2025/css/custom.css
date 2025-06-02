@@ -81,3 +81,31 @@
 #quotation .button.primary.btn:hover {
     color: #ffffff;
 }
+
+/* Share button styles */
+.share-btn {
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    border-radius: 1em;
+    padding: 5px 10px;
+    margin: 1em;
+    font-size: 12px;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.share-btn:hover {
+    background: rgba(0,0,0,0.9);
+}
+
+.share-btn i {
+    font-size: 14px;
+}
+
+/* Make image container relative for positioning */
+article img {
+    position: relative;
+}

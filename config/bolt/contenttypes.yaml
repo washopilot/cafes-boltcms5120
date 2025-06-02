@@ -995,6 +995,22 @@ settings:
             alt: false
             postfix: |
                 Usar una imagen png con transparencia
+        share_title:
+            type: text
+            variant: inline
+            label: Share Title
+            default: Share Title
+            group: Share Button
+        share_text:
+            type: text
+            variant: inline
+            label: Share Text
+            default: Share Text
+        share_button:
+            type: text
+            variant: inline
+            label: Share Button
+            default: Share Button
     viewless: true
     singleton: true
     show_on_dashboard: false
