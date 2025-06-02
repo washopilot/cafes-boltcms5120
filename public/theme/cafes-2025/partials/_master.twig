@@ -339,202 +339,80 @@
             {% endif %}
 
             {% if isRecord is defined %}
-                <div class="toast-container" id="toastContainer"></div>
-
                 <script>
-                    class ImageShareManager {
-                        constructor() {
-                            this.baseUrl = 'https://cafesdeloja.com';
-                            this.init();
+                    document.addEventListener('DOMContentLoaded', function() {
+                        // Seleccionar todas las imágenes en el contenido
+                        const images = document.querySelectorAll('article img');
+                        
+                        if (!navigator.share) {
+                            console.log('Web Share API no soportada en este navegador');
                         }
 
-                        init() { // Esperar a que el DOM esté completamente cargado
-                            if (document.readyState === 'loading') {
-                                document.addEventListener('DOMContentLoaded', () => this.processImages());
-                            } else {
-                                this.processImages();
-                            }
-                        }
-
-                        processImages() { // Encontrar SOLO las imágenes dentro del article específico
-                            const article = document.querySelector('article.article.col-12.col-lg-8');
-                            if (! article) {
-                                console.log('No se encontró el article con las clases específicas');
-                                return;
-                            }
-
-                            const images = article.querySelectorAll('img');
-                            console.log(`Procesando ${
-                                images.length
-                            } imágenes dentro del article`);
-
-                            images.forEach((img, index) => {
-                                console.log(`Procesando imagen ${
-                                    index + 1
-                                }: ${
-                                    img.src
-                                }`);
-                                this.addShareButton(img);
-                            });
-                        }
-
-                        addShareButton(img) { // Crear contenedor para la imagen si no existe
-                            if (img.parentElement.classList.contains('image-container')) 
-                                return;
-                            
-
-
-                            const container = document.createElement('div');
-                            container.className = 'image-container';
-
-                            // Insertar el contenedor antes de la imagen
-                            img.parentNode.insertBefore(container, img);
-                            container.appendChild(img);
-
+                        images.forEach(img => {
                             // Crear botón de compartir
                             const shareBtn = document.createElement('button');
                             shareBtn.className = 'share-btn';
-                            shareBtn.innerHTML = '<i class="fas fa-share-alt"></i>';
-                            shareBtn.setAttribute('aria-label', 'Compartir imagen');
-                            shareBtn.title = 'Compartir esta imagen';
+                            shareBtn.innerHTML = '<i class="uil uil-share-alt"></i>';
+                            
+                            // Insertar después de la imagen
+                            img.parentNode.insertBefore(shareBtn, img.nextSibling);
 
-                            // Agregar event listener
-                            shareBtn.addEventListener('click', (e) => {
-                                e.preventDefault();
-                                this.shareImage(img, shareBtn);
-                            });
-
-                            container.appendChild(shareBtn);
-                        }
-
-                        async shareImage(img, button) {
-                            try { // Obtener información de la imagen
-                                const imageUrl = this.getFullImageUrl(img.src);
-                                const imageTitle = img.alt || 'Imagen de Cafés de Loja';
-                                const pageUrl = window.location.href;
-
-                                // Datos para compartir
-                                const shareData = {
-                                    title: imageTitle,
-                                    text: `¡Mira esta imagen de Cafés de Loja!`,
-                                    url: imageUrl
-                                };
-
-                                // Verificar si Web Share API está disponible y es móvil
-                                if (navigator.share && this.canShare(shareData)) {
-                                    console.log('Usando Web Share API (móvil)');
-                                    await navigator.share(shareData);
-                                    this.showSuccessAnimation(button);
-                                    this.showNotification('¡Imagen compartida exitosamente!', 'success');
-                                } else { // Fallback: copiar al portapapeles
-                                    console.log('Usando fallback (desktop)');
-                                    await this.fallbackShare(imageUrl, imageTitle);
-                                    this.showSuccessAnimation(button);
-                                    this.showNotification('Enlace copiado al portapapeles', 'info');
-                                }
-                            } catch (error) {
-                                console.error('Error al compartir:', error);
-
-                                if (error.name === 'AbortError') { // Usuario canceló el compartir
-                                    this.showNotification('Compartir cancelado', 'info');
-                                    return;
-                                }
-
-                                // Intentar fallback
+                            // Funcionalidad de compartir
+                            shareBtn.addEventListener('click', async () => {
                                 try {
-                                    const imageUrl = this.getFullImageUrl(img.src);
-                                    await this.fallbackShare(imageUrl, img.alt || 'Imagen');
-                                    this.showNotification('Enlace copiado al portapapeles', 'info');
-                                } catch (fallbackError) {
-                                    this.showNotification('No se pudo compartir la imagen', 'error');
-                                }
-                            }
-                        }
-
-                        getFullImageUrl(src) { // Si la URL ya es absoluta, devolverla tal como está
-                            if (src.startsWith('http://') || src.startsWith('https://')) {
-                                return src;
-                            }
-
-                            // Si es una URL relativa, construir la URL completa
-                            if (src.startsWith('/')) {
-                                return this.baseUrl + src;
-                            } else {
-                                return this.baseUrl + '/' + src;
-                            }
-                        }
-
-                        canShare(data) {
-                            try {
-                                return navigator.canShare ? navigator.canShare(data) : true;
-                            } catch (error) {
-                                return false;
-                            }
-                        }
-
-                        async fallbackShare(url, title) { // Intentar copiar al portapapeles
-                            if (navigator.clipboard && navigator.clipboard.writeText) {
-                                await navigator.clipboard.writeText(url);
-                            } else { // Fallback más antiguo
-                                const textArea = document.createElement('textarea');
-                                textArea.value = url;
-                                textArea.style.position = 'fixed';
-                                textArea.style.opacity = '0';
-                                document.body.appendChild(textArea);
-                                textArea.focus();
-                                textArea.select();
-
-                                try {
-                                    document.execCommand('copy');
-                                } finally {
-                                    document.body.removeChild(textArea);
-                                }
-                            }
-                        }
-
-                        showSuccessAnimation(button) {
-                            button.classList.add('share-success');
-                            setTimeout(() => {
-                                button.classList.remove('share-success');
-                            }, 300);
-                        }
-
-                        showNotification(message, type = 'info') {
-                            const container = document.getElementById('toastContainer');
-                            const toast = document.createElement('div');
-                            toast.className = 'custom-toast';
-
-                            const icon = type === 'success' ? 'fas fa-check-circle' : type === 'error' ? 'fas fa-exclamation-circle' : 'fas fa-info-circle';
-
-                            toast.innerHTML = `
-                    <i class="${icon}" style="margin-right: 8px;"></i>
-                    ${message}
-                `;
-
-                            container.appendChild(toast);
-
-                            // Mostrar toast
-                            setTimeout(() => toast.classList.add('show'), 100);
-
-                            // Ocultar y remover toast
-                            setTimeout(() => {
-                                toast.classList.remove('show');
-                                setTimeout(() => {
-                                    if (container.contains(toast)) {
-                                        container.removeChild(toast);
+                                    console.log('Intentando compartir imagen:', img.src);
+                                    
+                                    if (navigator.share) {
+                                        try {
+                                            console.log('Creando blob desde:', img.src);
+                                            const response = await fetch(img.src);
+                                            if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                                            
+                                            const blob = await response.blob();
+                                            const filesArray = [
+                                                new File(
+                                                    [blob],
+                                                    'imagen-compartida.jpg',
+                                                    {
+                                                        type: blob.type || 'image/jpeg',
+                                                        lastModified: new Date().getTime()
+                                                    }
+                                                )
+                                            ];
+                                            
+                                            await navigator.share({
+                                                title: 'Compartir imagen',
+                                                text: 'Mira esta imagen',
+                                                files: filesArray
+                                            });
+                                            console.log('Imagen compartida como archivo');
+                                        } catch (e) {
+                                            console.warn('Error compartiendo como archivo:', e);
+                                            // Fallback a compartir URL
+                                            await navigator.share({
+                                                title: 'Compartir imagen',
+                                                text: 'Mira esta imagen',
+                                                url: img.src
+                                            });
+                                        }
+                                    } else {
+                                        // Fallback para navegadores sin Web Share API
+                                        console.log('Usando fallback de copiar URL');
+                                        try {
+                                            await navigator.clipboard.writeText(img.src);
+                                            alert('URL de la imagen copiada al portapapeles: ' + img.src);
+                                        } catch (e) {
+                                            console.error('Error copiando URL:', e);
+                                            prompt('Copie esta URL para compartir:', img.src);
+                                        }
                                     }
-                                }, 300);
-                            }, 3000);
-                        }
-                    }
-
-                    // Inicializar el gestor de compartir imágenes
-                    const imageShareManager = new ImageShareManager();
-
-                    // Para desarrollo: también reinicializar si se agrega contenido dinámicamente
-                    window.reinitializeImageSharing = () => {
-                        imageShareManager.processImages();
-                    };
+                                } catch (err) {
+                                    console.error('Error al compartir:', err);
+                                    alert('Error al compartir la imagen');
+                                }
+                            });
+                        });
+                    });
                 </script>
             {% endif %}
 
@@ -542,3 +420,4 @@
 
     </html>
 {% endblock %}
+
